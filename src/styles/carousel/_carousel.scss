@@ -1,0 +1,39 @@
+.swiper {
+	max-height: 700px;
+}
+
+.swiper-wrapper {
+}
+
+.swiper-slide {
+}
+
+.slide {
+	border-radius: 1em;
+	height: auto;
+	object-fit: contain;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	margin-top: 0;
+	width: 100px;
+	top: 0;
+	height: 100%;
+	color: inherit;
+
+	&:hover {
+		background: #0001;
+	}
+}
+
+.swiper-button-prev {
+	left: 0;
+}
+
+.swiper-button-next {
+	right: 0;
+}
+
+@media screen and (max-width: 768px) {
+}

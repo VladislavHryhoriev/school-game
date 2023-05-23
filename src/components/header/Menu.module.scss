@@ -1,0 +1,12 @@
+.menu {
+	display: flex;
+	align-items: center;
+
+	.link {
+		margin: 0 1em;
+
+		&:hover {
+			color: #fff;
+		}
+	}
+}

@@ -1,0 +1,10 @@
+.link {
+	display: flex;
+	justify-content: center;
+	margin: 0 0.2em;
+	transition: 0.3s;
+
+	&:hover {
+		filter: invert(1);
+	}
+}

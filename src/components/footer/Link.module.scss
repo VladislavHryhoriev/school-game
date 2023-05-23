@@ -1,0 +1,12 @@
+.link {
+	display: block;
+	margin: 0 1em;
+	// transition: 0.s;
+
+	&:hover {
+		filter: brightness(100);
+	}
+
+	.icon {
+	}
+}

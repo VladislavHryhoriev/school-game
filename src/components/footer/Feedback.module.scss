@@ -1,0 +1,41 @@
+.feedback {
+	.title {
+		text-align: center;
+		padding-bottom: 1em;
+		border-bottom: 3px solid;
+	}
+
+	.form {
+		display: flex;
+		justify-content: center;
+		width: 400px;
+		margin-top: 1em;
+	}
+
+	.email {
+		width: 70%;
+		padding: 1em;
+		padding-right: 0;
+		border-top-left-radius: 0.5em;
+		border-bottom-left-radius: 0.5em;
+		outline: none;
+		background: #555b;
+		color: #d8acab;
+
+		&::placeholder {
+			color: #777;
+		}
+	}
+}
+
+.link {
+	display: flex;
+	align-items: center;
+	padding: 0 1em;
+	background: #555b;
+	border-top-right-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+
+	.icon {
+	}
+}
