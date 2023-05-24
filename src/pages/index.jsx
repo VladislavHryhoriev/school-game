@@ -1,6 +1,6 @@
 import Gallery from '@/components/gallery/Gallery';
 import Home from '@/components/home/Home';
-import { WidgetContext } from '@/context/context';
+import { WidgetContext } from '@/context/widgetContext';
 
 export default function Page({ widget }) {
 	return (

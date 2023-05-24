@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import Logo from './Logo';
 import s from './Widget.module.scss';
-import { WidgetContext } from '@/context/context';
+import { WidgetContext } from '@/context/widgetContext';
 
 const Widget = () => {
 	const { instant_invite, presence_count, name, members } = useContext(WidgetContext);
