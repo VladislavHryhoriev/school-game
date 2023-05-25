@@ -1,6 +1,5 @@
 .gallery {
 	margin-top: 3em;
-	margin-bottom: 5em;
 }
 
 .inner {
@@ -11,4 +10,15 @@
 
 .title {
 	text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+	.title {
+		display: none;
+	}
+	.inner {
+		padding: 1em;
+		padding-top: 0.5em;
+		border-radius: 0.5em;
+	}
 }

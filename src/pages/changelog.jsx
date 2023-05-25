@@ -1,12 +1,14 @@
-import SEO from '@/components/SEO';
 import Dropdown from '@/components/dropdown/Dropdown';
 import { versions } from '@/data/versions';
 import s from '@/styles/pages/changelog.module.scss';
+import Head from 'next/head';
 
 export default function Changelog() {
 	return (
 		<>
-			<SEO title='Sloths Command - Changelog' />
+			<Head>
+				<title>Sloths Command - Changelog</title>
+			</Head>
 			<main className={s.changelog}>
 				<div className='container'>
 					<div className={s.inner}>

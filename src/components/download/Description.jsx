@@ -1,8 +1,10 @@
+import Image from 'next/image';
 import { useState } from 'react';
 import Modal from '../modal/Modal';
+import Buttons from './Buttons';
 import s from './Description.module.scss';
-import VersionBox from './VersionBox';
 import Freemium from './Freemium';
+import VersionBox from './VersionBox';
 
 const Description = ({ isPremium, setIsPremium }) => {
 	const [showModal, setShowModal] = useState(false);
@@ -10,11 +12,13 @@ const Description = ({ isPremium, setIsPremium }) => {
 	const free = {
 		title: 'Бесплатная версия',
 		text: 'В бесплатной версии вам будет доступно ванильное прохождение включающее все сложности игры которые вам придется преодолеть и своими усилиями добиться желаемых результатов или концовок, а также доступны некоторые бесплатные - секретные коды для активации.',
+		imageUrl: '/assets/[imgFree].webp',
 	};
 
 	const premium = {
 		title: 'Премиум версия',
 		text: 'В премиальной версии ваш функционал будет расширен: будет добавлена возможность проходить игру в Lite-режиме (настраиваемая стоимость энергии и средней цены за предметы), а так же откроется доступ к чит меню в котором при желании можно облегчить свое прохождение различными способами от выдачи денег и энергии до улучшения уровня доверия и дружбы с персонажами, созданию собственных ивентов с RNPS и многое другое включая ранний доступ к новейшей версии.',
+		imageUrl: '/assets/[imgPremium].webp',
 	};
 
 	return (
@@ -24,30 +28,16 @@ const Description = ({ isPremium, setIsPremium }) => {
 			) : (
 				<Freemium title={free.title} text={free.text} />
 			)}
-			<div className={s.buttons}>
-				<div className={s.wrapper}>
-					<button
-						className={`${s.btn} ${s.free} ${isPremium ? '' : s.active}`}
-						onClick={() => setIsPremium(false)}>
-						Бесплатная версия
-					</button>
-					<button
-						className={`${s.btn} ${s.premium} ${isPremium ? s.active : ''}`}
-						onClick={() => setIsPremium(true)}>
-						Премиум версия
-					</button>
-				</div>
-				{isPremium ? (
-					<form className={s.emailForm}>
-						<input className={s.email} type='email' name='email' placeholder='Введите вашу почту' />
-						<button className={s.send}>Получить</button>
-					</form>
-				) : (
-					<button className={s.download} onClick={() => setShowModal(true)}>
-						Скачать
-					</button>
-				)}
+			<div className={s.imageBox}>
+				<Image
+					className={s.image}
+					src={isPremium ? premium.imageUrl : free.imageUrl}
+					width={300}
+					height={200}
+					alt='image'
+				/>
 			</div>
+			<Buttons isPremium={isPremium} setIsPremium={setIsPremium} setShowModal={setShowModal} />
 			<Modal active={showModal} setActive={setShowModal}>
 				<div className={s.modalWrapper}>
 					<h3 className={s.title}>Выберите версию</h3>

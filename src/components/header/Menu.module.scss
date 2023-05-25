@@ -10,3 +10,20 @@
 		}
 	}
 }
+
+@media screen and (max-width: 1024px) {
+	.menu {
+		padding-right: 1em;
+		border-right: 3px solid #333;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.menu {
+		display: block;
+		margin-top: 3em;
+		padding: 0;
+		border: none;
+		font-size: 1.5em;
+	}
+}

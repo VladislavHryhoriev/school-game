@@ -1,5 +1,6 @@
 .description {
 	flex: 4;
+	position: relative;
 	padding: 2em;
 	border-top-left-radius: 1em;
 	border-bottom-left-radius: 1em;
@@ -8,5 +9,42 @@
 	.title {
 		text-align: center;
 		font-size: 2em;
+	}
+}
+
+.imageBox {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+}
+
+.image {
+	display: none;
+	width: 150px;
+}
+
+@media screen and (max-width: 1140px) {
+	.description {
+		// padding: 1em;
+		border-radius: 0.5em;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.description {
+		padding: 1em;
+		padding-top: 3em;
+		.title {
+			display: none;
+		}
+	}
+	.imageBox {
+		& .image {
+			display: block;
+		}
 	}
 }

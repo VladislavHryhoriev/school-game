@@ -1,8 +1,12 @@
 .feedback {
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+
 	.title {
 		text-align: center;
 		padding-bottom: 1em;
-		border-bottom: 3px solid;
+		border-bottom: 3px solid #d8acab;
 	}
 
 	.form {
@@ -13,7 +17,8 @@
 	}
 
 	.email {
-		width: 70%;
+		flex: 8;
+		display: block;
 		padding: 1em;
 		padding-right: 0;
 		border-top-left-radius: 0.5em;
@@ -26,16 +31,29 @@
 			color: #777;
 		}
 	}
+
+	.link {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		padding: 0 1em;
+		background: #555b;
+		border-top-right-radius: 0.5em;
+		border-bottom-right-radius: 0.5em;
+
+		.icon {
+		}
+	}
 }
 
-.link {
-	display: flex;
-	align-items: center;
-	padding: 0 1em;
-	background: #555b;
-	border-top-right-radius: 0.5em;
-	border-bottom-right-radius: 0.5em;
-
-	.icon {
+@media screen and (max-width: 1024px) {
+	.feedback {
+		.title {
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+		.form {
+			max-width: 100%;
+		}
 	}
 }

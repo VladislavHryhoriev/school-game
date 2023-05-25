@@ -1,7 +1,7 @@
-import SEO from '@/components/SEO';
 import Description from '@/components/download/Description';
 import Images from '@/components/download/Images';
 import s from '@/styles/pages/download.module.scss';
+import Head from 'next/head';
 import { useState } from 'react';
 
 export default function Page() {
@@ -9,7 +9,9 @@ export default function Page() {
 
 	return (
 		<>
-			<SEO title='Sloths Command - Versions' />
+			<Head>
+				<title>Sloths Command - Versions</title>
+			</Head>
 			<main className={s.versions}>
 				<div className='container'>
 					<div className={s.inner}>

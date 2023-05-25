@@ -1,12 +1,14 @@
-import SEO from '@/components/SEO';
 import Gallery from '@/components/gallery/Gallery';
 import Home from '@/components/home/Home';
 import { WidgetContext } from '@/context/widgetContext';
+import Head from 'next/head';
 
 export default function Page({ widget }) {
 	return (
 		<>
-			<SEO title='Sloths Command - Home' />
+			<Head>
+				<title>Sloths Command - Home</title>
+			</Head>
 			<WidgetContext.Provider value={widget}>
 				<Home />
 				<Gallery />

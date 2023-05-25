@@ -58,3 +58,19 @@
 	padding: 1em;
 	border-radius: 1em;
 }
+
+@media screen and (max-width: 768px) {
+	.button {
+		border-radius: 0.5em;
+		padding: 1.25em;
+	}
+
+	.new {
+		text-align: center;
+		padding: 1em;
+	}
+	.bugfix {
+		text-align: center;
+		padding: 1em;
+	}
+}

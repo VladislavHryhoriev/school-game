@@ -5,3 +5,14 @@
 		color: #fff;
 	}
 }
+
+@media screen and (max-width: 768px) {
+	.link {
+		display: inline-block;
+		margin-bottom: 1em;
+		padding: 0.5em 2em;
+		border-radius: 0.25em;
+		color: #fff;
+		background: #5865f2;
+	}
+}

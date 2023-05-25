@@ -12,6 +12,8 @@
 
 	.title {
 		text-align: center;
+		border-top-left-radius: 0.5em;
+		border-top-right-radius: 0.5em;
 		background: #5865f2;
 		color: #fff;
 		font-size: 1em;
@@ -19,9 +21,11 @@
 	}
 
 	.list {
-		background: #2a2a2aaa;
 		max-height: 500px;
+		border-bottom-left-radius: 0.5em;
+		border-bottom-right-radius: 0.5em;
 		overflow-y: scroll;
+		background: #2a2a2aaa;
 
 		&::-webkit-scrollbar {
 			width: 5px;

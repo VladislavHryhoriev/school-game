@@ -30,3 +30,67 @@
 		color: #fff;
 	}
 }
+
+// Phone
+
+.logoBox {
+	display: none;
+	align-items: center;
+	margin-left: 1em;
+}
+
+.currentPage {
+	margin-left: 1em;
+	font-size: 1.5em;
+}
+
+.burgerMenu {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	width: 100%;
+	height: 100vh;
+	background: #222d;
+	transform: translateX(100%);
+	text-align: center;
+	transition: 0.2s;
+	backdrop-filter: blur(5px);
+
+	&.activeMenu {
+		transform: translateX(0);
+	}
+}
+
+.showBurger {
+	display: none;
+}
+
+.burgerButton {
+	margin: 1em;
+	background: none;
+}
+
+.burgerIcon {
+	display: none;
+}
+.iconActive {
+	display: block;
+}
+
+@media screen and (max-width: 768px) {
+	.inner {
+		height: auto;
+	}
+
+	.navigation {
+		display: none;
+	}
+
+	.logoBox {
+		display: flex;
+	}
+
+	.showBurger {
+		display: block;
+	}
+}

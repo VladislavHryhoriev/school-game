@@ -1,5 +1,13 @@
 .logo {
 	margin: 2em 0 0 2em;
+	z-index: 100;
 	.image {
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.logo {
+		margin: 0;
+		display: none;
 	}
 }

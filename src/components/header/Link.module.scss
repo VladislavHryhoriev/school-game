@@ -8,3 +8,12 @@
 		filter: invert(1);
 	}
 }
+
+@media screen and (max-width: 768px) {
+	.image {
+		display: flex;
+		width: 4em;
+		height: 4em;
+		margin: 1em;
+	}
+}

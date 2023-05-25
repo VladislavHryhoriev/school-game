@@ -19,6 +19,7 @@ body {
 	color: #d8acab;
 	background: #000;
 	line-height: 1.5;
+	-webkit-tap-highlight-color: transparent;
 
 	&::-webkit-scrollbar {
 		width: 5px;
@@ -93,4 +94,15 @@ input {
 
 .dnd {
 	border-left: 5px solid red;
+}
+
+@media screen and (max-width: 768px) {
+	.background {
+		background: linear-gradient(120deg, #4e287a, #47439a, #345db8);
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		display: none;
+	}
 }

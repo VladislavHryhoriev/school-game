@@ -1,10 +1,11 @@
+.nameTop {
+	display: none;
+}
+
 .versionBox {
 	display: flex;
 	align-items: center;
 	gap: 1em;
-
-	.name {
-	}
 
 	.version {
 		display: flex;
@@ -18,5 +19,21 @@
 		}
 		.image {
 		}
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.versionBox {
+		.version {
+			flex-direction: column;
+		}
+	}
+
+	.name {
+		display: none;
+	}
+
+	.nameTop {
+		display: block;
 	}
 }

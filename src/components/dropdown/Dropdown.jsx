@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import s from './Dropdown.module.scss';
+import { useState } from 'react';
 import { v4 } from 'uuid';
+import s from './Dropdown.module.scss';
 
 const Dropdown = ({ title, content }) => {
 	const [isOpened, setIsOpened] = useState(false);
