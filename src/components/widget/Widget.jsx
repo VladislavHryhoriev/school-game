@@ -6,7 +6,7 @@ import { WidgetContext } from '@/context/widgetContext';
 const Widget = () => {
 	const { instant_invite, presence_count, name, members } = useContext(WidgetContext);
 	return (
-		<a className={s.widget} href={instant_invite}>
+		<a className={s.widget} href={instant_invite} target='_blank' rel='nofollow'>
 			<Logo />
 			<div className={s.members}>
 				<p>Online: {presence_count}</p>

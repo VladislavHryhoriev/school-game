@@ -1,13 +1,17 @@
+import SEO from '@/components/SEO';
 import Gallery from '@/components/gallery/Gallery';
 import Home from '@/components/home/Home';
 import { WidgetContext } from '@/context/widgetContext';
 
 export default function Page({ widget }) {
 	return (
-		<WidgetContext.Provider value={widget}>
-			<Home />
-			<Gallery />
-		</WidgetContext.Provider>
+		<>
+			<SEO title='Sloths Command - Home' />
+			<WidgetContext.Provider value={widget}>
+				<Home />
+				<Gallery />
+			</WidgetContext.Provider>
+		</>
 	);
 }
 

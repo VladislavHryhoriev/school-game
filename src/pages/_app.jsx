@@ -5,6 +5,7 @@ import 'swiper/css/pagination';
 import Layout from '@/components/layout/Layout';
 import '@/styles/main.scss';
 import { Rubik } from 'next/font/google';
+import SEO from '@/components/SEO';
 
 const rubik = Rubik({
 	weight: ['400', '500'],
@@ -14,6 +15,7 @@ const rubik = Rubik({
 export default function App({ Component, pageProps }) {
 	return (
 		<div className={`${rubik.className} wrapper`}>
+			<SEO />
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
