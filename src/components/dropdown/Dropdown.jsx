@@ -5,6 +5,16 @@ import s from './Dropdown.module.scss';
 const Dropdown = ({ title, content }) => {
 	const [isOpened, setIsOpened] = useState(false);
 
+	const newContent = content.new
+		.trim()
+		.split('\n')
+		.map((text) => text.trim());
+
+	const bugfixContent = content.bugfix
+		.trim()
+		.split('\n')
+		.map((text) => text.trim());
+
 	return (
 		<div className={s.dropdown}>
 			<button
@@ -17,7 +27,7 @@ const Dropdown = ({ title, content }) => {
 				onClick={() => setIsOpened(!isOpened)}>
 				<div className={s.new}>
 					<h3 className={s.header}>Новый контент:</h3>
-					{content.new.map((item) => (
+					{newContent.map((item) => (
 						<p className={s.text} key={v4()}>
 							{item}
 						</p>
@@ -25,7 +35,7 @@ const Dropdown = ({ title, content }) => {
 				</div>
 				<div className={s.bugfix}>
 					<h3 className={s.header}>Исправленные баги:</h3>
-					{content.bugfix.map((item) => (
+					{bugfixContent.map((item) => (
 						<p className={s.text} key={v4()}>
 							{item}
 						</p>

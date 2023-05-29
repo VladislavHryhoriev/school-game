@@ -39,5 +39,9 @@
 		"placeholder": "Enter your E-mail"
 	},
 
+	"modal": {
+		"title": "Select version"
+	},
+
 	"end": ""
 }

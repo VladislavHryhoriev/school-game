@@ -3,8 +3,12 @@ import { versions } from '@/data/versions';
 import s from '@/styles/pages/changelog.module.scss';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 export default function Changelog() {
+	const { locale } = useRouter();
+	const data = locale === 'en' ? versions.en : versions.ru;
+
 	return (
 		<>
 			<Head>
@@ -14,7 +18,7 @@ export default function Changelog() {
 				<div className='container'>
 					<div className={s.inner}>
 						<div className={s.menu}>
-							{versions.map((version) => (
+							{data.map((version) => (
 								<Dropdown key={version.id} {...version} />
 							))}
 						</div>

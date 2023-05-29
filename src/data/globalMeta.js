@@ -1,11 +1,10 @@
 /// Need add real url for image!
-
 export const globalMeta = {
 	siteName: 'Sloths Command',
 	siteUrl: 'https://slothscommand.com',
 	// siteLogo: 'https://slothscommand.com/site-logo.webp',
 	siteLogo:
-		'https://cdn.discordapp.com/attachments/475250040768692224/1111252016572944414/site-logo.webp',
+		'https://cdn.discordapp.com/attachments/475250040768692224/1111252016572944414/site-logo.webp', /// fix this
 	siteLogoW: '1280',
 	siteLogoH: '600',
 	siteLocale: 'ru_RU',
