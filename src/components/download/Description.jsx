@@ -5,19 +5,21 @@ import Buttons from './Buttons';
 import s from './Description.module.scss';
 import Freemium from './Freemium';
 import VersionBox from './VersionBox';
+import { useTranslation } from 'next-i18next';
 
 const Description = ({ isPremium, setIsPremium }) => {
 	const [showModal, setShowModal] = useState(false);
+	const { t } = useTranslation('common');
 
 	const free = {
-		title: 'Бесплатная версия',
-		text: 'В бесплатной версии вам будет доступно ванильное прохождение включающее все сложности игры которые вам придется преодолеть и своими усилиями добиться желаемых результатов или концовок, а также доступны некоторые бесплатные - секретные коды для активации.',
+		title: t('download.free.title'),
+		text: t('download.free.text'),
 		imageUrl: '/assets/[imgFree].webp',
 	};
 
 	const premium = {
-		title: 'Премиум версия',
-		text: 'В премиальной версии ваш функционал будет расширен: будет добавлена возможность проходить игру в Lite-режиме (настраиваемая стоимость энергии и средней цены за предметы), а так же откроется доступ к чит меню в котором при желании можно облегчить свое прохождение различными способами от выдачи денег и энергии до улучшения уровня доверия и дружбы с персонажами, созданию собственных ивентов с RNPS и многое другое включая ранний доступ к новейшей версии.',
+		title: t('download.premium.title'),
+		text: t('download.premium.text'),
 		imageUrl: '/assets/[imgPremium].webp',
 	};
 
@@ -40,7 +42,7 @@ const Description = ({ isPremium, setIsPremium }) => {
 			<Buttons isPremium={isPremium} setIsPremium={setIsPremium} setShowModal={setShowModal} />
 			<Modal active={showModal} setActive={setShowModal}>
 				<div className={s.modalWrapper}>
-					<h3 className={s.title}>Выберите версию</h3>
+					<h3 className={s.title}>{t('modal.title')}</h3>
 					<ul className={s.versions}>
 						<VersionBox v='0.941' showModal={showModal} setShowModal={setShowModal} />
 						<VersionBox v='0.940' showModal={showModal} setShowModal={setShowModal} />

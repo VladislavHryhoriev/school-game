@@ -1,5 +1,10 @@
-import { useContext } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
-export default function Changelog() {
-	return <div>Неизвестная страница 404</div>;
+export default function Error() {
+	const router = useRouter();
+
+	useEffect(() => {
+		router.push('/');
+	}, []);
 }

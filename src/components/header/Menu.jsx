@@ -1,20 +1,15 @@
+import { useTranslation } from 'next-i18next';
 import s from './Menu.module.scss';
 import MenuLink from './MenuLink';
 
 const Menu = () => {
-	const pages = {
-		home: 'Главная',
-		download: 'Скачать',
-		changelog: 'Изменения',
-	};
-
-	const { home, download, changelog } = pages;
+	const { t } = useTranslation('common');
 
 	return (
 		<ul className={s.menu}>
-			<MenuLink page='/' title={home} />
-			<MenuLink page='/download' title={download} />
-			<MenuLink page='/changelog' title={changelog} />
+			<MenuLink page='/' title={t('header.home')} />
+			<MenuLink page='/download' title={t('header.download')} />
+			<MenuLink page='/changelog' title={t('header.changelog')} />
 		</ul>
 	);
 };

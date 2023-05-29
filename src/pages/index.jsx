@@ -1,6 +1,7 @@
 import Gallery from '@/components/gallery/Gallery';
 import Home from '@/components/home/Home';
 import { WidgetContext } from '@/context/widgetContext';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 
 export default function Page({ widget }) {
@@ -17,11 +18,14 @@ export default function Page({ widget }) {
 	);
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
 	const res = await fetch('https://discord.com/api/guilds/498237888782401567/widget.json');
 	const widget = await res.json();
 
 	return {
-		props: { widget },
+		props: {
+			...(await serverSideTranslations(locale, ['common'])),
+			widget,
+		},
 	};
 }

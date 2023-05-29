@@ -1,6 +1,7 @@
 import Dropdown from '@/components/dropdown/Dropdown';
 import { versions } from '@/data/versions';
 import s from '@/styles/pages/changelog.module.scss';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 
 export default function Changelog() {
@@ -22,4 +23,12 @@ export default function Changelog() {
 			</main>
 		</>
 	);
+}
+
+export async function getStaticProps({ locale }) {
+	return {
+		props: {
+			...(await serverSideTranslations(locale, ['common'])),
+		},
+	};
 }

@@ -1,0 +1,43 @@
+{
+	"header": {
+		"home": "Home",
+		"download": "Download",
+		"changelog": "Changelog"
+	},
+
+	"footer": {
+		"developer-title": "Game developer",
+		"feedback-title": "Feedback"
+	},
+
+	"home": {
+		"title": "School Game",
+		"text": {
+			"1": "The visual novel \"School Game\" is drawn in the popular anime cartoon style, so all the female characters look incredibly cute and beautiful, with big eyes and incredibly cute faces. The main character in the novel is a teenager who moves to a new town with his family and is forced to go to a different school to finally graduate and get a decent education. He is already in high school and has only one year left.",
+			"2": "The protagonist of \"School Game\" by happy accident becomes the head of the local school board and now has a direct influence on the life of the school and all teenagers. Thanks to his new position, the guy will be able to achieve his cherished goal - to sleep with as many beauties as possible before the big prom night. In order to achieve this goal, he will need to communicate properly, use all his influence and complete many tasks.",
+			"3": "There are also classic RPG elements in the novel. So, the user can pump up the abilities of his character - to improve the same skills of communication, persuasion and others, because they directly depend on how effective will be the actions of the character. It is worth noting that it is extremely important to consider all the inhabitants of the institution, if there is a desire to unlock the bed scenes as quickly as possible."
+		}
+	},
+
+	"gallery-overview": "Overview",
+
+	"download": {
+		"free": {
+			"title": "Free edition",
+			"text": "The free version will be available to you a vanilla walkthrough that includes all the difficulties of the game that you have to overcome and your efforts to achieve the desired results or endings, and some free - secret codes are available for activation."
+		},
+		"premium": {
+			"title": "Premium edition",
+			"text": "In the premium version your functionality will be expanded: there will be an opportunity to pass the game in Lite-mode (customizable cost of energy and average price of items), as well as access to the cheat menu, where if you want you can facilitate your passage in various ways from giving money and energy to increase trust and friendship with the characters, creating your own events with RNPS and more, including early access to the newest version."
+		},
+		"buttons": {
+			"free": "Free edition",
+			"premium": "Premium edition",
+			"get": "Get",
+			"download": "Download"
+		},
+		"placeholder": "Enter your E-mail"
+	},
+
+	"end": ""
+}

@@ -1,7 +1,9 @@
 import s from './Developer.module.scss';
 import Link from './Link';
+import { useTranslation } from 'next-i18next';
 
 const Developer = () => {
+	const { t } = useTranslation('common');
 	const data = [
 		{
 			id: 1,
@@ -27,7 +29,7 @@ const Developer = () => {
 
 	return (
 		<div className={s.developer}>
-			<h3 className={s.title}>Разработчик игры</h3>
+			<h3 className={s.title}>{t('footer.developer-title')}</h3>
 			<ul className={s.links}>
 				{data.map((data) => (
 					<Link key={data.id} {...data} />

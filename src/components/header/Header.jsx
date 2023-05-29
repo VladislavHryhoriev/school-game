@@ -1,18 +1,18 @@
 import { PageNameContext } from '@/context/pageNameContext';
+import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import BurgerButton from './BurgerButton';
 import BurgerMenu from './BurgerMenu';
 import s from './Header.module.scss';
 import Logo from './Logo';
 import Navigation from './Navigation';
-import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Header = () => {
-	const [language, setLanguage] = useState(false);
 	const [isActiveBurger, setIsActiveBurger] = useState(false);
 	const [currentPageName, setCurrentPageName] = useState('');
-	const lang = language ? 'En' : 'Ru';
+	const { locale } = useRouter();
 
 	// get page name from MenuLink.jsx
 	const getPageName = (pageName) => {
@@ -20,13 +20,14 @@ const Header = () => {
 		setIsActiveBurger(!isActiveBurger);
 	};
 
+	const title = currentPageName || (locale === 'en' ? 'Home' : 'Главная');
+
 	return (
 		<PageNameContext.Provider value={getPageName}>
 			<header className={s.header}>
 				<div className={s.inner}>
 					<Logo />
-					<Navigation lang={lang} setLanguage={setLanguage} language={language} />
-
+					<Navigation />
 					<Link className={s.logoBox} href={'/'}>
 						<Image
 							className={s.mobileLogo}
@@ -36,14 +37,9 @@ const Header = () => {
 							alt='little-logo'
 						/>
 					</Link>
-					<h2 className={`${s.currentPage} ${s.showBurger}`}>{currentPageName || 'Главная'}</h2>
+					<h2 className={`${s.currentPage} ${s.showBurger}`}>{title}</h2>
 					<BurgerButton isActive={isActiveBurger} setIsActive={setIsActiveBurger} />
-					<BurgerMenu
-						lang={lang}
-						language={language}
-						setLanguage={setLanguage}
-						isActive={isActiveBurger}
-					/>
+					<BurgerMenu isActive={isActiveBurger} />
 				</div>
 			</header>
 		</PageNameContext.Provider>

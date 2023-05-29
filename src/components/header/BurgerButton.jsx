@@ -1,6 +1,5 @@
 import Image from 'next/image';
-/// import style from Header
-import s from './Header.module.scss';
+import s from './Navigation.module.scss';
 
 const BurgerButton = ({ isActive, setIsActive }) => {
 	return (

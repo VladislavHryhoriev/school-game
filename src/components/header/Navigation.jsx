@@ -1,16 +1,29 @@
 /// import style from Header
-import s from './Header.module.scss';
+import { useRouter } from 'next/router';
 import Menu from './Menu';
+import s from './Navigation.module.scss';
 import Social from './SocialLink';
 
-const Navigation = ({ setLanguage, language, lang }) => {
+const Navigation = () => {
+	const { locale, push, asPath } = useRouter();
+
+	const changeLanguage = (e) => {
+		const locale = e.target.value;
+		push(asPath, asPath, { locale });
+	};
+
 	return (
 		<nav className={s.navigation}>
 			<Menu />
 			<Social />
-			<button className={s.langSwitcher} onClick={() => setLanguage(!language)}>
-				{lang}
-			</button>
+			<select defaultValue={locale} onChange={changeLanguage} className={s.langSelect}>
+				<option className={s.selector} value='en'>
+					EN
+				</option>
+				<option className={s.selector} value='ru'>
+					RU
+				</option>
+			</select>
 		</nav>
 	);
 };
