@@ -1,11 +1,13 @@
+@import '@/styles/base/variables';
+
 .gallery {
 	margin-top: 3em;
 }
 
 .inner {
-	background: #222b;
-	padding: 2em;
-	border-radius: 1em;
+	background: $background-main;
+	padding: $global-padding;
+	border-radius: $radius-lg;
 }
 
 .title {
@@ -19,6 +21,6 @@
 	.inner {
 		padding: 1em;
 		padding-top: 0.5em;
-		border-radius: 0.5em;
+		border-radius: $radius-sm;
 	}
 }

@@ -1,3 +1,5 @@
+@import '@/styles/base/variables';
+
 .modal {
 	display: flex;
 	justify-content: center;
@@ -21,8 +23,8 @@
 }
 
 .modalContainer {
-	padding: 2em;
-	border-radius: 1em;
+	padding: $global-padding;
+	border-radius: $radius-lg;
 	transform: scale(0);
 	background: #333d;
 	transition: 0.3s;
@@ -34,6 +36,6 @@
 
 @media screen and (max-width: 768px) {
 	.modalContainer {
-		border-radius: 0.5em;
+		border-radius: $radius-sm;
 	}
 }

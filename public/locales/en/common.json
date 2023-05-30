@@ -43,5 +43,8 @@
 		"title": "Select version"
 	},
 
-	"end": ""
+	"changelog": {
+		"new": "New content",
+		"bugfix": "Fixed bugs"
+	}
 }

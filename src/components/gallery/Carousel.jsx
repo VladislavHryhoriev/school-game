@@ -23,8 +23,8 @@ const Carousel = () => {
 					<Image
 						className='slide'
 						src={'/assets/carousel/slide-1.webp'}
-						width={1920}
-						height={1080}
+						width={1280}
+						height={720}
 						alt='slide'
 					/>
 				</SwiperSlide>
@@ -32,8 +32,8 @@ const Carousel = () => {
 					<Image
 						className='slide'
 						src={'/assets/carousel/slide-2.webp'}
-						width={1920}
-						height={1080}
+						width={1280}
+						height={720}
 						alt='slide'
 					/>
 				</SwiperSlide>
@@ -41,8 +41,8 @@ const Carousel = () => {
 					<Image
 						className='slide'
 						src={'/assets/carousel/slide-3.webp'}
-						width={1920}
-						height={1080}
+						width={1280}
+						height={720}
 						alt='slide'
 					/>
 				</SwiperSlide>
@@ -50,8 +50,8 @@ const Carousel = () => {
 					<Image
 						className='slide'
 						src={'/assets/carousel/slide-4.webp'}
-						width={1920}
-						height={1080}
+						width={1280}
+						height={720}
 						alt='slide'
 					/>
 				</SwiperSlide>
@@ -59,8 +59,44 @@ const Carousel = () => {
 					<Image
 						className='slide'
 						src={'/assets/carousel/slide-5.webp'}
-						width={1920}
-						height={1080}
+						width={1280}
+						height={720}
+						alt='slide'
+					/>
+				</SwiperSlide>
+				<SwiperSlide>
+					<Image
+						className='slide'
+						src={'/assets/carousel/slide-6.webp'}
+						width={1280}
+						height={720}
+						alt='slide'
+					/>
+				</SwiperSlide>
+				<SwiperSlide>
+					<Image
+						className='slide'
+						src={'/assets/carousel/slide-7.webp'}
+						width={1280}
+						height={720}
+						alt='slide'
+					/>
+				</SwiperSlide>
+				<SwiperSlide>
+					<Image
+						className='slide'
+						src={'/assets/carousel/slide-8.webp'}
+						width={1280}
+						height={720}
+						alt='slide'
+					/>
+				</SwiperSlide>
+				<SwiperSlide>
+					<Image
+						className='slide'
+						src={'/assets/carousel/slide-9.webp'}
+						width={1280}
+						height={720}
 						alt='slide'
 					/>
 				</SwiperSlide>

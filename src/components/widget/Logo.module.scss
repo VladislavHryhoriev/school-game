@@ -1,6 +1,8 @@
+@import '@/styles/base/variables';
+
 .logo {
 	padding: 1em;
-	background: #5865f2;
+	background: $font-secondary;
 }
 
 .image {

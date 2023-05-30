@@ -1,5 +1,5 @@
 {
-	"theme_color": "#5865f2",
+	"theme_color": "$font-secondary",
 	"background_color": "#222222bb",
 	"display": "standalone",
 	"scope": "/",

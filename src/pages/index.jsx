@@ -27,5 +27,6 @@ export async function getStaticProps({ locale }) {
 			...(await serverSideTranslations(locale, ['common'])),
 			widget,
 		},
+		revalidate: 60,
 	};
 }

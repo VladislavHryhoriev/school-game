@@ -8,6 +8,21 @@ import { useState } from 'react';
 export default function Page() {
 	const [isPremium, setIsPremium] = useState(false);
 
+	const links = {
+		free: [
+			'/assets/overview/free-1.webp',
+			'/assets/overview/free-2.webp',
+			'/assets/overview/free-3.webp',
+		],
+		premium: [
+			'/assets/overview/premium-1.webp',
+			'/assets/overview/premium-2.webp',
+			'/assets/overview/premium-3.webp',
+		],
+	};
+
+	const images = isPremium ? links.premium : links.free;
+
 	return (
 		<>
 			<Head>
@@ -18,7 +33,7 @@ export default function Page() {
 					<div className={s.inner}>
 						<div className={s.info}>
 							<Description isPremium={isPremium} setIsPremium={setIsPremium} />
-							<Images isPremium={isPremium} setIsPremium={setIsPremium} />
+							<Images images={images} />
 						</div>
 					</div>
 				</div>
@@ -32,5 +47,6 @@ export async function getStaticProps({ locale }) {
 		props: {
 			...(await serverSideTranslations(locale, ['common'])),
 		},
+		revalidate: 60,
 	};
 }

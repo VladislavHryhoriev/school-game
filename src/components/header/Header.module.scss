@@ -1,3 +1,5 @@
+@import '@/styles/base/variables';
+
 .header {
 	position: fixed;
 	width: 100%;
@@ -10,7 +12,7 @@
 	justify-content: space-between;
 	align-items: center;
 	height: 5em;
-	background: #222d;
+	background: $background-primary;
 	font-weight: 500;
 }
 

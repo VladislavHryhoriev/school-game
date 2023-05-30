@@ -1,3 +1,5 @@
+@import '@/styles/base/variables';
+
 .footer {
 }
 
@@ -5,8 +7,8 @@
 	display: flex;
 	justify-content: space-evenly;
 	margin-top: 3em;
-	padding: 2em;
-	background: #222b;
+	padding: $global-padding;
+	background: $background-main;
 }
 
 @media screen and (max-width: 1024px) {

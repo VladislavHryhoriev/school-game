@@ -14,13 +14,13 @@ const Description = ({ isPremium, setIsPremium }) => {
 	const free = {
 		title: t('download.free.title'),
 		text: t('download.free.text'),
-		imageUrl: '/assets/[imgFree].webp',
+		imageUrl: '/assets/overview/free-1.webp',
 	};
 
 	const premium = {
 		title: t('download.premium.title'),
 		text: t('download.premium.text'),
-		imageUrl: '/assets/[imgPremium].webp',
+		imageUrl: '/assets/overview/premium-1.webp',
 	};
 
 	return (

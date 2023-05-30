@@ -1,8 +1,10 @@
+@import '@/styles/base/variables';
+
 .link {
 	margin: 0 1em;
 
 	&:hover {
-		color: #fff;
+		color: $font-white;
 	}
 }
 
@@ -12,7 +14,7 @@
 		margin-bottom: 1em;
 		padding: 0.5em 2em;
 		border-radius: 0.25em;
-		color: #fff;
-		background: #5865f2;
+		color: $font-white;
+		background: $font-secondary;
 	}
 }

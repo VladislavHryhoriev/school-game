@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { v4 } from 'uuid';
 import s from './Dropdown.module.scss';
+import { useTranslation } from 'next-i18next';
 
 const Dropdown = ({ title, content }) => {
 	const [isOpened, setIsOpened] = useState(false);
+	const { t } = useTranslation('common');
 
 	const newContent = content.new
 		.trim()
@@ -26,7 +28,7 @@ const Dropdown = ({ title, content }) => {
 				className={`${s.content} ${isOpened ? s.active : ''}`}
 				onClick={() => setIsOpened(!isOpened)}>
 				<div className={s.new}>
-					<h3 className={s.header}>Новый контент:</h3>
+					<h3 className={s.header}>{t('changelog.new')}:</h3>
 					{newContent.map((item) => (
 						<p className={s.text} key={v4()}>
 							{item}
@@ -34,7 +36,7 @@ const Dropdown = ({ title, content }) => {
 					))}
 				</div>
 				<div className={s.bugfix}>
-					<h3 className={s.header}>Исправленные баги:</h3>
+					<h3 className={s.header}>{t('changelog.bugfix')}:</h3>
 					{bugfixContent.map((item) => (
 						<p className={s.text} key={v4()}>
 							{item}
