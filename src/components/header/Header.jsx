@@ -1,13 +1,13 @@
 import { PageNameContext } from '@/context/pageNameContext';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import BurgerButton from './BurgerButton';
 import BurgerMenu from './BurgerMenu';
 import s from './Header.module.scss';
 import Logo from './Logo';
 import Navigation from './Navigation';
-import { useRouter } from 'next/router';
 
 const Header = () => {
 	const [isActiveBurger, setIsActiveBurger] = useState(false);
