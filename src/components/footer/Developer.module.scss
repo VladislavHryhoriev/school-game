@@ -12,3 +12,13 @@
 	margin-top: 1em;
 	height: auto;
 }
+
+@media screen and (max-width: 768px) {
+	.developer {
+		margin-bottom: 3em;
+	}
+	.links {
+		display: flex;
+		justify-content: center;
+	}
+}

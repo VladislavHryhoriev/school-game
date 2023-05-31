@@ -46,5 +46,12 @@
 	"changelog": {
 		"new": "New content",
 		"bugfix": "Fixed bugs"
+	},
+
+	"form": {
+		"name": "Your name",
+		"email": "E-mail",
+		"message": "Enter your message",
+		"button": "Send"
 	}
 }
