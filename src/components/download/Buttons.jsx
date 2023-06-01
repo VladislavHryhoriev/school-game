@@ -1,18 +1,21 @@
 import { useTranslation } from 'next-i18next';
 import { useRef, useState } from 'react';
 import s from './Buttons.module.scss';
+import { useRouter } from 'next/router';
 
 const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 	const [email, setEmail] = useState('');
 	const { t } = useTranslation('common');
 	const buttonRef = useRef();
 
+	const router = useRouter();
+
 	const handleButtonClick = async (e) => {
 		e.preventDefault();
 		buttonRef.current.textContent = '...';
 		try {
 			const formatEmail = email.trim().toLowerCase();
-			const response = await fetch(`/api/getEmail?email=${formatEmail}`);
+			const response = await fetch(`/api/get-email?email=${formatEmail}`);
 			const data = await response.json();
 
 			if (data.length) {
@@ -20,11 +23,14 @@ const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 
 				if (Tier !== 'Supporter') {
 					// Downloading logic
+					const archiveName = 'school-game_0.942';
+					const token = 'RdHl2w';
+
+					router.push(`/api/premium-download?v=${archiveName}&token=${token}`);
+					// const res = await fetch(`/api/premium-download?v=${archiveName}&token=${token}`);
 
 					buttonRef.current.textContent = '✅';
 					buttonRef.current.style.backgroundColor = '#00ff44';
-
-					console.log('Download game...');
 
 					setTimeout(() => {
 						buttonRef.current.textContent = t('download.buttons.get');

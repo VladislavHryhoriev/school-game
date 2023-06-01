@@ -3,6 +3,7 @@ import mysql from 'mysql2';
 // Define your Next.js API handler
 export default async function handler(req, res) {
 	const email = req.query.email;
+
 	try {
 		const connection = mysql.createConnection({
 			host: process.env.MYSQL_HOST,
@@ -13,7 +14,7 @@ export default async function handler(req, res) {
 
 		connection.connect();
 
-		const query = `SELECT * FROM datebase_with_cute_ass`;
+		const query = `SELECT * FROM datebase_with_cute_ass WHERE Email = '${email}'`;
 		const [rows] = await connection.promise().query(query);
 		connection.end();
 
