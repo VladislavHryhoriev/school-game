@@ -53,5 +53,11 @@
 		"email": "E-mail",
 		"message": "Enter your message",
 		"button": "Send"
+	},
+
+	"download-status": {
+		"ok": "Success",
+		"supporter": "A supporter level player cannot download a premium version",
+		"failed": "Invalid email"
 	}
 }

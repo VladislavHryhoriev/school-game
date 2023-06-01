@@ -53,5 +53,11 @@
 		"email": "E-mail",
 		"message": "Ваше сообщение",
 		"button": "Отправить"
+	},
+
+	"download-status": {
+		"ok": "Успех",
+		"supporter": "У игрока уровня supporter нет возможности скачивать премиум версию",
+		"failed": "Неверный email"
 	}
 }

@@ -1,6 +1,5 @@
 import mysql from 'mysql2';
 
-// Define your Next.js API handler
 export default async function handler(req, res) {
 	const email = req.query.email;
 
@@ -18,7 +17,19 @@ export default async function handler(req, res) {
 		const [rows] = await connection.promise().query(query);
 		connection.end();
 
-		res.status(200).json(rows);
+		const user = rows[0];
+
+		if (user) {
+			if (user.Tier !== 'Supporter') {
+				return res.status(200).json({ status: 'ok' });
+			}
+
+			if (user.Tier === 'Supporter') {
+				return res.status(200).json({ status: 'supporter' });
+			}
+		}
+
+		res.status(200).json({ status: 'failed' });
 	} catch (error) {
 		console.error('Error connecting to MySQL:', error);
 		res.status(500).json({ error: 'Internal Server Error' });
