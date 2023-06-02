@@ -4,7 +4,7 @@ import path from 'path';
 export default function handler(req, res) {
 	const version = req.query.version;
 	const platform = req.query.platform;
-	const filename = `${version}_${platform}`;
+	const filename = `school-game${version}_${platform}`;
 
 	const filePath = path.join(
 		process.cwd(),

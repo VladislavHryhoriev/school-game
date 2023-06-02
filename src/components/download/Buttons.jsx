@@ -10,10 +10,12 @@ const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 	const [statuslog, setStatusLog] = useState('');
 	const [status, setStatus] = useState('');
 	const [buttonText, setButtonText] = useState(t('download.buttons.get'));
+	const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 	const buttonDefaultText = t('download.buttons.get');
 
 	const handleButtonClick = async (e) => {
 		e.preventDefault();
+		setIsButtonDisabled(true);
 		setButtonText('...');
 
 		try {
@@ -39,6 +41,7 @@ const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 					break;
 			}
 
+			setIsButtonDisabled(false);
 			setButtonText(buttonDefaultText);
 			setTimeout(() => setStatusLog(''), 5000);
 		} catch (error) {
@@ -60,11 +63,13 @@ const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 			<div className={s.wrapper}>
 				<button
 					className={`${s.btn} ${s.free} ${isPremium ? '' : s.active}`}
+					disabled={isButtonDisabled}
 					onClick={() => setIsPremium(false)}>
 					{t('download.buttons.free')}
 				</button>
 				<button
 					className={`${s.btn} ${s.premium} ${isPremium ? s.active : ''}`}
+					disabled={isButtonDisabled}
 					onClick={() => setIsPremium(true)}>
 					{t('download.buttons.premium')}
 				</button>
@@ -80,7 +85,7 @@ const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 						placeholder={t('download.placeholder')}
 						required
 					/>
-					<button type='submit' className={s.send}>
+					<button type='submit' disabled={isButtonDisabled} className={s.send}>
 						{buttonText}
 					</button>
 				</form>

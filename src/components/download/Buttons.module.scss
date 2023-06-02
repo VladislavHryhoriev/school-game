@@ -67,6 +67,11 @@
 		&:hover {
 			background: $font-secondary-hover;
 		}
+
+		&:disabled {
+			background: $background-button-disabled;
+			cursor: default;
+		}
 	}
 }
 
