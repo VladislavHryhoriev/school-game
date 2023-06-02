@@ -16,6 +16,7 @@ const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 	const handleButtonClick = async (e) => {
 		e.preventDefault();
 		setIsButtonDisabled(true);
+		setStatusLog('');
 		setButtonText('...');
 
 		try {
