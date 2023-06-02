@@ -56,7 +56,8 @@ const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 			const token = 'RdHl2w';
 			router.push(`/api/premium-download?v=${archiveName}&token=${token}`);
 		}
-	}, [router, status]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [status]);
 
 	return (
 		<div className={s.buttons}>
