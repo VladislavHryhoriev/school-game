@@ -29,7 +29,7 @@ const SEO = ({
 			<link rel='canonical' href={canonicalUrl} />
 			<meta name='viewport' content='width=device-width, initial-scale=1' />
 			<link rel='icon' href='/favicon.ico' />
-			<meta name='theme-color' content='$font-secondary' />
+			<meta name='theme-color' content='#5865f2' />
 			<link rel='manifest' href='/manifest.webmanifest' />
 			{children}
 		</Head>

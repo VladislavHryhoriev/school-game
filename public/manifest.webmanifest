@@ -1,6 +1,6 @@
 {
 	"theme_color": "$font-secondary",
-	"background_color": "#222222bb",
+	"background_color": "#5865f2",
 	"display": "standalone",
 	"scope": "/",
 	"start_url": "/",
