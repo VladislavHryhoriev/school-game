@@ -63,79 +63,79 @@ export const v0942en = {
 			— The system that is responsible for creating randomized NPCs has been refactored: some errors that come out with a certain chance have been fixed, and the performance of this system has been improved.
 		`,
 		bugfix: `
-		— Fixed a bug that could cause an exception to occur during some events with the Suzuki Matsui.
-		— Fixed a bug that could cause all male randomized NPCs to be bald.
-		— Fixed a bug due to which the number of perfumes in the backpack was displayed incorrectly.
-		— Fixed a bug that caused exceptions to be thrown when using certain features in the beauty salon.
-		— Fixed a bug due to which, during a game session, if you start to randomize the game and click the "Remove All" button in the editor, all randomized NPCs in the game were without clothes.
-		— Fixed a bug that could cause text wrapping to work in the Randomized NPC interaction menu, thereby completely breaking the interface itself.
-		— Fixed a bug that caused an exception to occur when changing the game language during a game session (not from the main game menu).
-		— Fixed a bug that caused an exception to occur when using the location interaction associated with the festival at the academy location.
-		— Fixed an issue where the event with a randomized female NPC escort could drop during the pre-tutorial and/or any time other than after the tutorial itself.
-		— Fixed a bug due to which the gender of a randomized NPC could change during the event to accompany him home.
-		— Fixed a bug that could cause an exception to be thrown when entering the interaction menu with randomized NPCs.
-		— Fixed a bug due to which the game could freeze at certain moments for a few seconds, and then throw an exception during the game session.
-		— Fixed a bug due to which in some events taking place in the main character's apartment there might not be a background of this very room.
-		— Fixed a bug that could cause a crash during playback of some events in the main character's apartment.
-		— Fixed an issue with some incorrect and incorrect drop conditions for events with randomized NPCs on Academy grounds.
-		— Fixed a bug due to which the options for interactions with the RNPCs under the first item in the English translation of the game could not be shown.
-		— Fixed a bug due to which the game spawned one less randomized NPC than it should.
-		— Fixed a bug due to which backgrounds with randomized NPCs of a non-18+ character could freeze on the screen in some cases.
-		— Fixed a bug that caused an exception in some events with Yuki Oota.
-		— Fixed a bug that could cause an exception to occur after starting a new game with some chance.
-		— Fixed a bug that could cause the game to crash during a game session.
-		— Fixed a bug that could cause the game to lag after a certain amount of time.
-		— Fixed a bug due to which some interface could not be displayed correctly in the English translation of the game.
-		— Fixed an issue where generating randomized NPCs could break the game in some cases.
-		— Fixed a bug where randomized NPCs could choose the wrong activity/appeal to the main character at certain points in the gameplay.
-		— Fixed a bug that could cause an exception to occur when going through Randomized NPC activities to Randomized NPCs regarding their romantic interactions.
-		— Fixed a bug due to which the amount of money received for work could be displayed as a non-integer number.
-		— Fixed a bug where the more sexual experience your character had, the less control they had in sex scenes when it should have been the other way around. In addition, the existing formulas were slightly corrected and brought under the current game balance.
-		— Fixed a bug due to which the function "Campaign for Yuki Oota" could not be displayed in some tabs with randomized NPCs and under certain conditions.
-		— Fixed a bug that could cause clothing to be colorless/purely black for randomized female NPCs in the Randomized NPC Editor.
-		— Fixed a bug due to which the scroll bar in the main menu could abruptly interrupt all text at some stage of its scrolling.
-		— Fixed an issue that could cause some events and interactions to not display when playing in English.
-		— Fixed a bug due to which, in some cases, the 4th base hairstyle could not have part of the hair in the back of the character.
-		— Fixed a bug that could cause an exception to occur during gameplay due to some randomized NPC generation errors.
-		— Fixed a bug due to which some game interface could not be displayed correctly in some cases/situations.
-		— Fixed an issue that could cause the game to crash after some time on some particularly weak devices.
-		— Fixed a bug that could cause an exception to be thrown when selecting certain skin/costume combinations and other things related to the RNPCs editor.
-		— Fixed a bug due to which randomized NPCs could do different location activities that they should be doing in the location they are in.
-		— Fixed a bug due to which, at some points in the story, it could lead to incorrect entries in your character's diary, misinforming and giving inaccurate information.
-		— Fixed a bug due to which, in the middle of a game session, a randomized NPC could change his appearance without any prerequisites.
-		— Fixed a bug due to which some indicators in the diary could be incorrectly displayed in fractional values.
-		— Fixed a bug that could cause an exception to be thrown during gameplay under certain generation conditions/problems in gameplay.
-		— Fixed an issue where randomized NPCs could change their clothing color at the most unnecessary and inopportune time to do so.
-		— Fixed a bug that could cause the game to crash after a while on particularly old devices.
-		— Fixed a bug due to which the game could at some points take too long to respond to clicks/open any menu for a very long time, and also generally behave incorrectly on some especially weak devices.
-		— Fixed a bug that could result in incorrect relationship/affection/fear scores with randomized NPCs during certain interactions.
-		— Fixed a bug that could cause an exception to occur when using certain interactions with randomized NPCs.
-		— Fixed a bug that could cause an exception to occur when playing any events with randomized NPCs.
-		— Fixed a bug that could cause incorrect relationship scores to be displayed when inviting a randomized female NPC to your home.
-		— Fixed a bug due to which the wrong randomized NPC could come to visit your character, which was supposed to come.
-		— Fixed a bug due to which, in some events with randomized NPCs, an incorrect number of attributes could be removed / added to your character.
-		— A bug has been fixed due to which an incorrect value of your character's attributes could be displayed in some moments of the game.
-		— Fixed a bug due to which the textures of randomized NPCs could be displayed incorrectly at some points in the game on some devices.
-		— Fixed an issue that could cause the textures of the Jacket and Skirt Outfit Set to work incorrectly. In addition, now any texture/color overlay does not work at all on this set of clothes due to incorrect performance.
-		— Fixed a bug due to which the third basic hairstyle in the editor of the main character could not be displayed correctly when changing the hairstyle.
-		— Fixed a bug that could cause an exception to be thrown when having sex with randomized female NPCs
-		— Fixed a bug due to which the location interaction buttons in the Gym location were simultaneously highlighted when they were hovered over.
-		— Fixed a bug due to which some events with randomized NPCs could be played with a male NPC and not a female one, even if the original event intended otherwise.
-		— Fixed a bug that could cause some editing options for randomized NPCs to disappear in the editor after some preliminary interactions with it.
-		— Fixed a bug related to incorrect display of the appearance of some randomized NPCs in a game session.
-		— Fixed a bug that could cause events with Robert the Cockroach to drop even if your character wasn't friendly with him to begin with.
-		— Fixed a bug due to which in the scenes of pawing the chest / buttocks of randomized female NPCs, they could have clothes in moments when they should not.
-		— Fixed a bug where a randomized NPC could have clothes in the activity menu when they should not.
-		— Fixed a bug that could cause an exception to be thrown due to some occult club management systems during game sessions.
-		— Fixed a bug due to which extra files could be in the list of academies that could be imported.
-		— Fixed some typos made in the opening story.
-		— Fixed a bug that could cause some UIs to display features of already removed mechanics/systems.
-		— Fixed a bug that could cause an exception when trying to donate money to the academy budget.
-		— Fixed a bug that could cause an exception in the player's room under certain in-game conditions.
-		— Fixed a bug that could cause your character to be nude if you previously edited randomized NPCs and clicked on the "Clear All" button.
-		— Fixed a bug due to which events with randomized NPCs could drop in the wrong locations in which they should drop.
-		— Fixed a bug where if your character broke a male character, the text would still refer to him as a girl.
-		— Fixed a bug due to which after pressing Shift+Alt+F12/F9/F10 the indicators of attachment/love/fear of randomized NPCs to your character did not increase.
+			— Fixed a bug that could cause an exception to occur during some events with the Suzuki Matsui.
+			— Fixed a bug that could cause all male randomized NPCs to be bald.
+			— Fixed a bug due to which the number of perfumes in the backpack was displayed incorrectly.
+			— Fixed a bug that caused exceptions to be thrown when using certain features in the beauty salon.
+			— Fixed a bug due to which, during a game session, if you start to randomize the game and click the "Remove All" button in the editor, all randomized NPCs in the game were without clothes.
+			— Fixed a bug that could cause text wrapping to work in the Randomized NPC interaction menu, thereby completely breaking the interface itself.
+			— Fixed a bug that caused an exception to occur when changing the game language during a game session (not from the main game menu).
+			— Fixed a bug that caused an exception to occur when using the location interaction associated with the festival at the academy location.
+			— Fixed an issue where the event with a randomized female NPC escort could drop during the pre-tutorial and/or any time other than after the tutorial itself.
+			— Fixed a bug due to which the gender of a randomized NPC could change during the event to accompany him home.
+			— Fixed a bug that could cause an exception to be thrown when entering the interaction menu with randomized NPCs.
+			— Fixed a bug due to which the game could freeze at certain moments for a few seconds, and then throw an exception during the game session.
+			— Fixed a bug due to which in some events taking place in the main character's apartment there might not be a background of this very room.
+			— Fixed a bug that could cause a crash during playback of some events in the main character's apartment.
+			— Fixed an issue with some incorrect and incorrect drop conditions for events with randomized NPCs on Academy grounds.
+			— Fixed a bug due to which the options for interactions with the RNPCs under the first item in the English translation of the game could not be shown.
+			— Fixed a bug due to which the game spawned one less randomized NPC than it should.
+			— Fixed a bug due to which backgrounds with randomized NPCs of a non-18+ character could freeze on the screen in some cases.
+			— Fixed a bug that caused an exception in some events with Yuki Oota.
+			— Fixed a bug that could cause an exception to occur after starting a new game with some chance.
+			— Fixed a bug that could cause the game to crash during a game session.
+			— Fixed a bug that could cause the game to lag after a certain amount of time.
+			— Fixed a bug due to which some interface could not be displayed correctly in the English translation of the game.
+			— Fixed an issue where generating randomized NPCs could break the game in some cases.
+			— Fixed a bug where randomized NPCs could choose the wrong activity/appeal to the main character at certain points in the gameplay.
+			— Fixed a bug that could cause an exception to occur when going through Randomized NPC activities to Randomized NPCs regarding their romantic interactions.
+			— Fixed a bug due to which the amount of money received for work could be displayed as a non-integer number.
+			— Fixed a bug where the more sexual experience your character had, the less control they had in sex scenes when it should have been the other way around. In addition, the existing formulas were slightly corrected and brought under the current game balance.
+			— Fixed a bug due to which the function "Campaign for Yuki Oota" could not be displayed in some tabs with randomized NPCs and under certain conditions.
+			— Fixed a bug that could cause clothing to be colorless/purely black for randomized female NPCs in the Randomized NPC Editor.
+			— Fixed a bug due to which the scroll bar in the main menu could abruptly interrupt all text at some stage of its scrolling.
+			— Fixed an issue that could cause some events and interactions to not display when playing in English.
+			— Fixed a bug due to which, in some cases, the 4th base hairstyle could not have part of the hair in the back of the character.
+			— Fixed a bug that could cause an exception to occur during gameplay due to some randomized NPC generation errors.
+			— Fixed a bug due to which some game interface could not be displayed correctly in some cases/situations.
+			— Fixed an issue that could cause the game to crash after some time on some particularly weak devices.
+			— Fixed a bug that could cause an exception to be thrown when selecting certain skin/costume combinations and other things related to the RNPCs editor.
+			— Fixed a bug due to which randomized NPCs could do different location activities that they should be doing in the location they are in.
+			— Fixed a bug due to which, at some points in the story, it could lead to incorrect entries in your character's diary, misinforming and giving inaccurate information.
+			— Fixed a bug due to which, in the middle of a game session, a randomized NPC could change his appearance without any prerequisites.
+			— Fixed a bug due to which some indicators in the diary could be incorrectly displayed in fractional values.
+			— Fixed a bug that could cause an exception to be thrown during gameplay under certain generation conditions/problems in gameplay.
+			— Fixed an issue where randomized NPCs could change their clothing color at the most unnecessary and inopportune time to do so.
+			— Fixed a bug that could cause the game to crash after a while on particularly old devices.
+			— Fixed a bug due to which the game could at some points take too long to respond to clicks/open any menu for a very long time, and also generally behave incorrectly on some especially weak devices.
+			— Fixed a bug that could result in incorrect relationship/affection/fear scores with randomized NPCs during certain interactions.
+			— Fixed a bug that could cause an exception to occur when using certain interactions with randomized NPCs.
+			— Fixed a bug that could cause an exception to occur when playing any events with randomized NPCs.
+			— Fixed a bug that could cause incorrect relationship scores to be displayed when inviting a randomized female NPC to your home.
+			— Fixed a bug due to which the wrong randomized NPC could come to visit your character, which was supposed to come.
+			— Fixed a bug due to which, in some events with randomized NPCs, an incorrect number of attributes could be removed / added to your character.
+			— A bug has been fixed due to which an incorrect value of your character's attributes could be displayed in some moments of the game.
+			— Fixed a bug due to which the textures of randomized NPCs could be displayed incorrectly at some points in the game on some devices.
+			— Fixed an issue that could cause the textures of the Jacket and Skirt Outfit Set to work incorrectly. In addition, now any texture/color overlay does not work at all on this set of clothes due to incorrect performance.
+			— Fixed a bug due to which the third basic hairstyle in the editor of the main character could not be displayed correctly when changing the hairstyle.
+			— Fixed a bug that could cause an exception to be thrown when having sex with randomized female NPCs
+			— Fixed a bug due to which the location interaction buttons in the Gym location were simultaneously highlighted when they were hovered over.
+			— Fixed a bug due to which some events with randomized NPCs could be played with a male NPC and not a female one, even if the original event intended otherwise.
+			— Fixed a bug that could cause some editing options for randomized NPCs to disappear in the editor after some preliminary interactions with it.
+			— Fixed a bug related to incorrect display of the appearance of some randomized NPCs in a game session.
+			— Fixed a bug that could cause events with Robert the Cockroach to drop even if your character wasn't friendly with him to begin with.
+			— Fixed a bug due to which in the scenes of pawing the chest / buttocks of randomized female NPCs, they could have clothes in moments when they should not.
+			— Fixed a bug where a randomized NPC could have clothes in the activity menu when they should not.
+			— Fixed a bug that could cause an exception to be thrown due to some occult club management systems during game sessions.
+			— Fixed a bug due to which extra files could be in the list of academies that could be imported.
+			— Fixed some typos made in the opening story.
+			— Fixed a bug that could cause some UIs to display features of already removed mechanics/systems.
+			— Fixed a bug that could cause an exception when trying to donate money to the academy budget.
+			— Fixed a bug that could cause an exception in the player's room under certain in-game conditions.
+			— Fixed a bug that could cause your character to be nude if you previously edited randomized NPCs and clicked on the "Clear All" button.
+			— Fixed a bug due to which events with randomized NPCs could drop in the wrong locations in which they should drop.
+			— Fixed a bug where if your character broke a male character, the text would still refer to him as a girl.
+			— Fixed a bug due to which after pressing Shift+Alt+F12/F9/F10 the indicators of attachment/love/fear of randomized NPCs to your character did not increase.
 	`,
 	},
 };
