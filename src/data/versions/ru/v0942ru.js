@@ -62,79 +62,79 @@ export const v0942ru = {
 			— Был проведен рефакторинг системы, которая отвечает за создания рандомизированных НПС: исправлены некоторые ошибки, выходящие с некоторым шансом, улучшена работоспособность этой системы.
 		`,
 		bugfix: `
-			— Fixed a bug that could cause an exception to occur during some events with the Suzuki Matsui.
-			— Fixed a bug that could cause all male randomized NPCs to be bald.
-			— Fixed a bug due to which the number of perfumes in the backpack was displayed incorrectly.
-			— Fixed a bug that caused exceptions to be thrown when using certain features in the beauty salon.
-			— Fixed a bug due to which, during a game session, if you start to randomize the game and click the "Remove All" button in the editor, all randomized NPCs in the game were without clothes.
-			— Fixed a bug that could cause text wrapping to work in the Randomized NPC interaction menu, thereby completely breaking the interface itself.
-			— Fixed a bug that caused an exception to occur when changing the game language during a game session (not from the main game menu).
-			— Fixed a bug that caused an exception to occur when using the location interaction associated with the festival at the academy location.
-			— Fixed an issue where the event with a randomized female NPC escort could drop during the pre-tutorial and/or any time other than after the tutorial itself.
-			— Fixed a bug due to which the gender of a randomized NPC could change during the event to accompany him home.
-			— Fixed a bug that could cause an exception to be thrown when entering the interaction menu with randomized NPCs.
-			— Fixed a bug due to which the game could freeze at certain moments for a few seconds, and then throw an exception during the game session.
-			— Fixed a bug due to which in some events taking place in the main character's apartment there might not be a background of this very room.
-			— Fixed a bug that could cause a crash during playback of some events in the main character's apartment.
-			— Fixed an issue with some incorrect and incorrect drop conditions for events with randomized NPCs on Academy grounds.
-			— Fixed a bug due to which the options for interactions with the RNPCs under the first item in the English translation of the game could not be shown.
-			— Fixed a bug due to which the game spawned one less randomized NPC than it should.
-			— Fixed a bug due to which backgrounds with randomized NPCs of a non-18+ character could freeze on the screen in some cases.
-			— Fixed a bug that caused an exception in some events with Yuki Oota.
-			— Fixed a bug that could cause an exception to occur after starting a new game with some chance.
-			— Fixed a bug that could cause the game to crash during a game session.
-			— Fixed a bug that could cause the game to lag after a certain amount of time.
-			— Fixed a bug due to which some interface could not be displayed correctly in the English translation of the game.
-			— Fixed an issue where generating randomized NPCs could break the game in some cases.
-			— Fixed a bug where randomized NPCs could choose the wrong activity/appeal to the main character at certain points in the gameplay.
-			— Fixed a bug that could cause an exception to occur when going through Randomized NPC activities to Randomized NPCs regarding their romantic interactions.
-			— Fixed a bug due to which the amount of money received for work could be displayed as a non-integer number.
-			— Fixed a bug where the more sexual experience your character had, the less control they had in sex scenes when it should have been the other way around. In addition, the existing formulas were slightly corrected and brought under the current game balance.
-			— Fixed a bug due to which the function "Campaign for Yuki Oota" could not be displayed in some tabs with randomized NPCs and under certain conditions.
-			— Fixed a bug that could cause clothing to be colorless/purely black for randomized female NPCs in the Randomized NPC Editor.
-			— Fixed a bug due to which the scroll bar in the main menu could abruptly interrupt all text at some stage of its scrolling.
-			— Fixed an issue that could cause some events and interactions to not display when playing in English.
-			— Fixed a bug due to which, in some cases, the 4th base hairstyle could not have part of the hair in the back of the character.
-			— Fixed a bug that could cause an exception to occur during gameplay due to some randomized NPC generation errors.
-			— Fixed a bug due to which some game interface could not be displayed correctly in some cases/situations.
-			— Fixed an issue that could cause the game to crash after some time on some particularly weak devices.
-			— Fixed a bug that could cause an exception to be thrown when selecting certain skin/costume combinations and other things related to the RNPCs editor.
-			— Fixed a bug due to which randomized NPCs could do different location activities that they should be doing in the location they are in.
-			— Fixed a bug due to which, at some points in the story, it could lead to incorrect entries in your character's diary, misinforming and giving inaccurate information.
-			— Fixed a bug due to which, in the middle of a game session, a randomized NPC could change his appearance without any prerequisites.
-			— Fixed a bug due to which some indicators in the diary could be incorrectly displayed in fractional values.
-			— Fixed a bug that could cause an exception to be thrown during gameplay under certain generation conditions/problems in gameplay.
-			— Fixed an issue where randomized NPCs could change their clothing color at the most unnecessary and inopportune time to do so.
-			— Fixed a bug that could cause the game to crash after a while on particularly old devices.
-			— Fixed a bug due to which the game could at some points take too long to respond to clicks/open any menu for a very long time, and also generally behave incorrectly on some especially weak devices.
-			— Fixed a bug that could result in incorrect relationship/affection/fear scores with randomized NPCs during certain interactions.
-			— Fixed a bug that could cause an exception to occur when using certain interactions with randomized NPCs.
-			— Fixed a bug that could cause an exception to occur when playing any events with randomized NPCs.
-			— Fixed a bug that could cause incorrect relationship scores to be displayed when inviting a randomized female NPC to your home.
-			— Fixed a bug due to which the wrong randomized NPC could come to visit your character, which was supposed to come.
-			— Fixed a bug due to which, in some events with randomized NPCs, an incorrect number of attributes could be removed / added to your character.
-			— A bug has been fixed due to which an incorrect value of your character's attributes could be displayed in some moments of the game.
-			— Fixed a bug due to which the textures of randomized NPCs could be displayed incorrectly at some points in the game on some devices.
-			— Fixed an issue that could cause the textures of the Jacket and Skirt Outfit Set to work incorrectly. In addition, now any texture/color overlay does not work at all on this set of clothes due to incorrect performance.
-			— Fixed a bug due to which the third basic hairstyle in the editor of the main character could not be displayed correctly when changing the hairstyle.
-			— Fixed a bug that could cause an exception to be thrown when having sex with randomized female NPCs
-			— Fixed a bug due to which the location interaction buttons in the Gym location were simultaneously highlighted when they were hovered over.
-			— Fixed a bug due to which some events with randomized NPCs could be played with a male NPC and not a female one, even if the original event intended otherwise.
-			— Fixed a bug that could cause some editing options for randomized NPCs to disappear in the editor after some preliminary interactions with it.
-			— Fixed a bug related to incorrect display of the appearance of some randomized NPCs in a game session.
-			— Fixed a bug that could cause events with Robert the Cockroach to drop even if your character wasn't friendly with him to begin with.
-			— Fixed a bug due to which in the scenes of pawing the chest / buttocks of randomized female NPCs, they could have clothes in moments when they should not.
-			— Fixed a bug where a randomized NPC could have clothes in the activity menu when they should not.
-			— Fixed a bug that could cause an exception to be thrown due to some occult club management systems during game sessions.
-			— Fixed a bug due to which extra files could be in the list of academies that could be imported.
-			— Fixed some typos made in the opening story.
-			— Fixed a bug that could cause some UIs to display features of already removed mechanics/systems.
-			— Fixed a bug that could cause an exception when trying to donate money to the academy budget.
-			— Fixed a bug that could cause an exception in the player's room under certain in-game conditions.
-			— Fixed a bug that could cause your character to be nude if you previously edited randomized NPCs and clicked on the "Clear All" button.
-			— Fixed a bug due to which events with randomized NPCs could drop in the wrong locations in which they should drop.
-			— Fixed a bug where if your character broke a male character, the text would still refer to him as a girl.
-			— Fixed a bug due to which after pressing Shift+Alt+F12/F9/F10 the indicators of attachment/love/fear of randomized NPCs to your character did not increase.
-		`,
+		— Исправлен баг, из-за которого могло выйти исключение во время некоторых ивентов с Сузуки Мацуи.
+		— Исправлен баг, из-за которого все мужские рандомизированные НПС могли быть лысыми.
+		— Исправлена недоработка, из-за которой количество духов в рюкзаке некорректно отображалось.
+		— Исправлен баг, из-за которого выходили исключения во время использования некоторых функций в салоне красоты.
+		— Исправлен баг, из-за которого, если во время игровой сессии начать рандомизировать игру и нажать в редакторе кнопку "Снять все", все рандомизированный НПС в игре были без одежды.
+		— Исправлена недоработка, из-за которой мог работать перенос текста в меню взаимодействия с рандомизированными НПС, тем самым полностью ломая сам интерфейс.
+		— Исправлена недоработка, из-за которой выходило исключение во время изменения языка игры во время игровой сессии (не из главного меню игры).
+		— Исправлен баг, из-за которого выходило исключение во время использования локационного взаимодействия, связанного с фестивалем на локации академии.
+		— Исправлена недоработка, из-за которой ивент с сопровождением рандомизированного НПС женского пола мог выпасть во время до учебных занятий и/или в любое другое время, но не после самих учебных занятий.
+		— Исправлена недоработка, из-за которой пол рандомизированного НПС мог поменяться во время ивента по его сопровождению до дома.
+		— Исправлен баг, из-за которого могло выйти исключение, когда вы заходили в меню взаимодействия с рандомизированными НПС.
+		— Исправлен баг, из-за которого игра могла зависнуть в определенных момент на несколько секунд, а после выдать исключение во время игровой сессии.
+		— Исправлена недоработка, из-за которой в некоторых ивентах, происходящих в квартире главного героя, могло не быть фона этой самой комнаты.
+		— Исправлен баг, из-за которого мог случиться вылет во время воспроизведения некоторых ивентов в квартире главного персонажа.
+		— Исправлена проблема с некоторыми неправильными и некорректными условиями выпадения ивентов с рандомизированными НПС на территории академии.
+		— Исправлена недоработка, из-за которой могли не показываться варианты взаимодействий с РНПС под первым пунктом на английском переводе игры.
+		— Исправлена недоработка, из-за которой в игре спавнилось на одного рандомизированного НПС меньше, чем нужно.
+		— Исправлена недоработка, из-за который фоны с рандомизированными НПС не 18+ характера могли зависать на экране при некоторых случаях.
+		— Исправлен баг, из-за которого выходило исключение в некоторых ивентах с Юки Оота.
+		— Исправлен баг, из-за которого могло выйти исключение после начала новой игры с некоторым шансом на это.
+		— Исправлен баг, из-за которого игра могла вылететь во время игровой сессии.
+		— Исправлен баг, из-за которого игра могла начать подлагивать по прошествию определенного времени.
+		— Исправлена недоработка, из-за которой некоторый интерфейс мог отображаться некорректно на английском переводе игры.
+		— Исправлена проблема, из-за которой в некоторых случаях генерации рандомизированных НПС могла ломать игру.
+		— Исправлен баг, из-за которого могло выйти исключение во время прохождения активностей рандомизированных НПС к рандомизированный НПС, касающихся их романтических взаимодействий.
+		— Исправлена недоработка, из-за которой количество полученных денег за работу могло отображаться, как нецелочисленное число.
+		— Исправлена недоработка, из-за которой чем больше ваш персонаж имел сексуального опыта, тем меньше он мог себя контролировать в сексуальных сценах, когда же должно было быть все наоборот. Кроме того, были незначительно исправлены имеющиеся формулы и подведены под нынешний игровой баланс.
+		— Исправлена недоработка, из-за которой функция "Агитировать за Юки Оота" могла не отображаться в некоторых вкладках с рандомизированными НПС и при некоторых условиях.
+		— Исправлен баг, из-за которого одежда могла быть бесцветной/сугубо черной у рандомизированных НПС женского пола в редакторе рандомизированных НПС.
+		— Исправлен баг, из-за которого бегущая строка в главном меню могла резко прерывать весь текст на каком-то этапе его прокрутки.
+		— Исправлена недоработка, из-за которой некоторые ивенты и взаимодействия могли не отображаться при игре на английском языке.
+		— Исправлен баг, из-за которого в некоторых случаях 4 базисная прическа могла не иметь часть волос в задней части персонажа.
+		— Исправлен баг, из-за которого могло выйти исключение во время игрового процесса из-за некоторых ошибок генерации рандомизированных НПС.
+		— Исправлен баг, из-за которого некоторый игровой интерфейс мог некорректно отображаться в некоторых случаях/ситуациях.
+		— Исправлена недоработка, из-за которого на некоторых особо слабых устройствах игра могла вылетать через некоторое время.
+		— Исправлен баг, из-за которого могло выйти исключение при выборе некоторых комбинаций особенностей внешности/костюмов и других вещей, связанных с редактором РНПС.
+		— Исправлена недоработка, из-за которой рандомизированные НПС могли заниматься не той локационной активностью, которой должны заниматься в локации, в которой они находятся.
+		— Исправлен баг, из-за которого в некоторых моментах сюжета тот мог приводить к некорректным записям в дневнике вашего персонажа, дезинформируя и давая неточную информацию.
+		— Исправлен баг, из-за которого посреди игровой сессии рандомизированный НПС мог поменяться свою внешность без каких-либо предпосылок.
+		— Исправлена недоработка, из-за которой некоторые показатели в дневнике могли некорректно отображаться, в дробных значениях.
+		— Исправлен баг, из-за которого могло выйти исключение во время игрового процесса при некоторых условиях генерации/проблемах в игровом процессе.
+		— Исправлена проблема, из-за которой рандомизированные НПС могли менять в цвете своей одежды в самый ненужный для этого и неподходящий момент.
+		— Исправлен баг, из-за которого игра могла вылетать через некоторое время на особо старых устройствах.
+		— Исправлена недоработка, из-за которой игра могла в некоторых моментах слишком долго отвечать на клики/очень долго открываться какое-либо меню, а также в целом некорректно себя вести на некоторых особо слабых устройствах.
+		— Исправлен баг, из-за которого могло выдаться некорректное значение очков отношений/привязанности/страха с рандомизированными НПС во время определенных взаимодействий.
+		— Исправлен баг, из-за которого могло выйти исключение при использовании некоторых взаимодействий с рандомизированными НПС.
+		— Исправлен баг, из-за которого могло выйти исключение во время воспроизведения каких-либо ивентов с рандомизированными НПС.
+		— Исправлен баг, из-за которого могло показываться некорректные очки отношений во время приглашения рандомизированного НПС женского пола к себе домой.
+		— Исправлен баг, из-за которого которого к вашему персонажу в гости мог прийти не тот рандомизированный НПС, который должен был прийти.
+		— Исправлен недоработка, из-за которого в некоторых ивентах с рандомизированными НПС могло сниматься/добавляться некорректное количество атрибутов вашему персонажу.
+		— Исправлена недоработка, из-за которой в некоторых игровых моментах могло показываться некорректное значение атрибутов вашего персонажа.
+		— Исправлена недоработка, из-за которой текстуры рандомизированных НПС могли в некоторых моментах игры отображаться некорректно на некоторых устройствах.
+		— Исправлена недоработка, из-за которой текстуры набора одежды «Кофта и юбка» могла работать некорректно. Кроме того, теперь на этот набор одежды вообще не работает какое-либо накладывание текстуры/цвета из-за некорректной работоспособности.
+		— Исправлена недоработка, из-за которой третья базовая прическа в редакторе главного персонажа могла некорректно отображаться при смене прически.
+		— Исправлен баг, из-за которого могло выйти исключение, если начать заниматься сексом с рандомизированными НПС женского пола.
+		— Исправлена недоработка, из-за которой кнопки локационных взаимодействий в локации «Спортивный зал» одновременно высвечивались при их наведении.
+		— Исправлен баг, из-за которого некоторые ивенты с рандомизированными НПС могли воспроизводиться с НПС мужского пола, а не женского, даже если изначальный ивент предполагал обратное.
+		— Исправлен баг, из-за которого могли пропадать некоторые возможности редактирования рандомизированных НПС в редакторе при некоторых предварительных взаимодействиях с ним.
+		— Исправлена недоработка, связанная с некорректным отображением внешности некоторых рандомизированных НПС в игровой сессии.
+		— Исправлена недоработка, из-за которой ивенты с Робертом-Фон-Тараканиусом могли выпасть, даже если ваш персонаж не имел с ним дружественных отношений с самого начала.
+		— Исправлена недоработка, из-за которой в сценах лапания груди/ягодиц рандомизированных женских НПС у таковых могла присутствовать одежда в моментах, когда ее не должно было быть.
+		— Исправлена недоработка, связанная с моментом, при котором у рандомизированного НПС могла быть одежда в меню активность, когда таковая должна была отсутствовать.
+		— Исправлен баг, из-за которого могло выйти исключение из-за некоторых систем управления клубом оккультизма во время игровых сессий.
+		— Исправлен баг, из-за которого в списке возможных для импорта академий могли находиться лишние файлы.
+		— Исправлены некоторые опечатки, произведенные в начальном сюжете.
+		— Исправлена недоработка, из-за которой в некоторых интерфейсах могли отображаться функции уже удаленных механик/систем.
+		— Исправлен баг, из-за которого могло выйти исключение во время попытки пожертвования денег в бюджет академии.
+		— Исправлен баг, из-за которого могло выйти исключение в комнате игрока при некоторых внутриигровых условиях.
+		— Исправлен баг, из-за которого ваш персонаж мог быть обнаженным, если вы до этого редактировали рандомизированных НПС и нажимали кнопку «Снять все».
+		— Исправлен баг, из-за которого ивенты с рандомизированными НПС могли выпадать не в тех локациях, в которых должны выпадать.
+		— Исправлена недоработка, из-за которой, если ваш персонаж ломал персонажа мужского пола, текст о нем говорил все равно, как о девушке.
+		— Исправлен баг, из-за которого после нажатия Shift+Alt+F12/F9/F10 не повышались показатели привязанности/любви/страха у рандомизированных НПС к вашему персонажу.
+		— Исправлена недоработка, при которой рандомизированные НПС в определенных моментах игрового процесса могли выбирать неправильную активность/обращение к главному герою.
+	`,
 	},
 };
