@@ -1,16 +1,20 @@
 import { useTranslation } from 'next-i18next';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import s from './Feedback.module.scss';
 
 const Feedback = () => {
+	const { t } = useTranslation('common');
 	const [email, setEmail] = useState('');
 	const [name, setName] = useState('');
 	const [message, setMessage] = useState('');
-	const { t } = useTranslation('common');
-	const buttonRef = useRef();
+	const [isSubmitting, setIsSubmitting] = useState(false);
+
+	const defaultButtonText = t('form.button');
+	const [buttonText, setButtonText] = useState(defaultButtonText);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		setIsSubmitting(true);
 		const data = { name, email, message, date: new Date().toUTCString() };
 
 		try {
@@ -23,14 +27,10 @@ const Feedback = () => {
 				setName('');
 				setEmail('');
 				setMessage('');
-				buttonRef.current.textContent = '✅';
-
-				setTimeout(() => {
-					buttonRef.current.textContent = t('form.button');
-				}, 3000);
+				setButtonText('✅');
 			}
 		} catch (error) {
-			console.error('Error send contact data:', error);
+			console.error('Error send form data:', error);
 		}
 	};
 
@@ -66,8 +66,8 @@ const Feedback = () => {
 					placeholder={t('form.message')}
 					required
 				/>
-				<button ref={buttonRef} type='submit' className={s.submit}>
-					{t('form.button')}
+				<button type='submit' disabled={isSubmitting} className={s.submit}>
+					{buttonText}
 				</button>
 			</form>
 		</div>

@@ -1,7 +1,7 @@
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-// Swiper should before main.scss
+// Swiper should before main.scss dont touch this comment
 import SEO from '@/components/SEO';
 import Layout from '@/components/layout/Layout';
 import '@/styles/main.scss';

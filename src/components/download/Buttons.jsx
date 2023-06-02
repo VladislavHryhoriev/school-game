@@ -1,15 +1,15 @@
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-import { useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import s from './Buttons.module.scss';
 
 const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 	const router = useRouter();
 	const { t } = useTranslation('common');
 	const [email, setEmail] = useState('');
-	const [log, setLog] = useState('');
+	const [statuslog, setStatusLog] = useState('');
+	const [status, setStatus] = useState('');
 	const [buttonText, setButtonText] = useState(t('download.buttons.get'));
-
 	const buttonDefaultText = t('download.buttons.get');
 
 	const handleButtonClick = async (e) => {
@@ -18,48 +18,45 @@ const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 
 		try {
 			const formatEmail = email.trim().toLowerCase();
-			const response = await fetch(`/api/get-email?email=${formatEmail}`);
-			const { status } = await response.json();
+			const res = await fetch(`/api/get-email?email=${formatEmail}`);
+			const { status } = await res.json();
+			// difference stateStatus and status
+			setStatus(status);
 
 			switch (status) {
 				case 'ok':
-					setLog(t('download-status.ok'));
-					setButtonText(buttonDefaultText);
+					setStatusLog(t('download-status.ok'));
 
-					const archiveName = 'school-game_0.942';
-					const token = 'RdHl2w';
-
-					router.push(`/api/premium-download?v=${archiveName}&token=${token}`);
 					break;
-
 				case 'supporter':
-					setLog(t('download-status.supporter'));
-					setButtonText(buttonDefaultText);
-
+					setStatusLog(t('download-status.supporter'));
 					break;
-
 				case 'failed':
-					setLog(t('download-status.failed'));
-					setButtonText(buttonDefaultText);
-
+					setStatusLog(t('download-status.failed'));
 					break;
-
 				default:
-					setLog('Server Error');
-					setButtonText(buttonDefaultText);
-
+					setStatusLog('Server Error');
 					break;
 			}
 
-			setTimeout(() => setLog(''), 5000);
+			setButtonText(buttonDefaultText);
+			setTimeout(() => setStatusLog(''), 5000);
 		} catch (error) {
 			console.error('Error fetching email:', error);
 		}
 	};
 
+	useEffect(() => {
+		if (status === 'ok') {
+			const archiveName = 'school-game_latest-0.942';
+			const token = 'RdHl2w';
+			router.push(`/api/premium-download?v=${archiveName}&token=${token}`);
+		}
+	}, [router, status]);
+
 	return (
 		<div className={s.buttons}>
-			<div className={s.log}>{log}</div>
+			<p className={s.statuslog}>{statuslog}</p>
 			<div className={s.wrapper}>
 				<button
 					className={`${s.btn} ${s.free} ${isPremium ? '' : s.active}`}

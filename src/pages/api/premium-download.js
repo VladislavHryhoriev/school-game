@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 export default function handler(req, res) {
-	const filePath = path.join(process.cwd(), 'src/games/latest.rar');
+	const filePath = path.join(process.cwd(), 'src/packages/premium/latest.rar');
 
 	const token = 'RdHl2w';
 

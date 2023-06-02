@@ -57,11 +57,16 @@
 	color: $font-white;
 	background: #5865f2;
 	border-radius: $radius-sm;
+	transition: 0.5s;
+
 	&:hover {
 		background: $font-secondary-hover;
 	}
 
-	.icon {
+	&:disabled {
+		background: $background-primary;
+		color: #aaa;
+		cursor: default;
 	}
 }
 

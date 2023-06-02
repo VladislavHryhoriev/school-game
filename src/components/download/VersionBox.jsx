@@ -1,13 +1,21 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import s from './VersionBox.module.scss';
 
-const VersionBox = ({ v, showModal, setShowModal }) => {
+const VersionBox = ({ version, setShowModal }) => {
+	const router = useRouter();
+
+	const handleClick = async (platform) => {
+		setShowModal(false);
+		router.push(`/api/free-download?platform=${platform}&version=${version}`);
+	};
+
 	return (
 		<>
-			<span className={s.nameTop}>{v}</span>
+			<span className={s.nameTop}>{version}</span>
 			<li className={s.versionBox}>
-				<span className={s.name}>{v}</span>
-				<a href={`#${v}-windows`} onClick={() => setShowModal(false)} className={s.version}>
+				<span className={s.name}>{version}</span>
+				<button onClick={() => handleClick('win')} className={s.version}>
 					<Image
 						className={s.image}
 						src={'/assets/download/windows.png'}
@@ -15,8 +23,8 @@ const VersionBox = ({ v, showModal, setShowModal }) => {
 						height={32}
 						alt='image'
 					/>
-				</a>
-				<a href={`#${v}-mac`} onClick={() => setShowModal(false)} className={s.version}>
+				</button>
+				<button onClick={() => handleClick('mac')} className={s.version}>
 					<Image
 						className={s.image}
 						src={'/assets/download/mac.png'}
@@ -24,8 +32,8 @@ const VersionBox = ({ v, showModal, setShowModal }) => {
 						height={32}
 						alt='image'
 					/>
-				</a>
-				<a href={`#${v}-linux`} onClick={() => setShowModal(false)} className={s.version}>
+				</button>
+				<button onClick={() => handleClick('linux')} className={s.version}>
 					<Image
 						className={s.image}
 						src={'/assets/download/linux.png'}
@@ -33,8 +41,8 @@ const VersionBox = ({ v, showModal, setShowModal }) => {
 						height={32}
 						alt='image'
 					/>
-				</a>
-				<a href={`#${v}-android`} onClick={() => setShowModal(false)} className={s.version}>
+				</button>
+				<button onClick={() => handleClick('android')} className={s.version}>
 					<Image
 						className={s.image}
 						src={'/assets/download/android.png'}
@@ -42,7 +50,7 @@ const VersionBox = ({ v, showModal, setShowModal }) => {
 						height={32}
 						alt='image'
 					/>
-				</a>
+				</button>
 			</li>
 		</>
 	);

@@ -44,12 +44,12 @@ const Description = ({ isPremium, setIsPremium }) => {
 				<div className={s.modalWrapper}>
 					<h3 className={s.title}>{t('modal.title')}</h3>
 					<ul className={s.versions}>
-						<VersionBox v='0.941' showModal={showModal} setShowModal={setShowModal} />
-						<VersionBox v='0.940' showModal={showModal} setShowModal={setShowModal} />
-						<VersionBox v='0.939' showModal={showModal} setShowModal={setShowModal} />
-						<VersionBox v='0.938' showModal={showModal} setShowModal={setShowModal} />
-						<VersionBox v='0.937' showModal={showModal} setShowModal={setShowModal} />
-						<VersionBox v='0.936' showModal={showModal} setShowModal={setShowModal} />
+						<VersionBox version='0.941' setShowModal={setShowModal} />
+						<VersionBox version='0.940' setShowModal={setShowModal} />
+						<VersionBox version='0.939' setShowModal={setShowModal} />
+						<VersionBox version='0.938' setShowModal={setShowModal} />
+						<VersionBox version='0.937' setShowModal={setShowModal} />
+						<VersionBox version='0.936' setShowModal={setShowModal} />
 					</ul>
 				</div>
 			</Modal>
