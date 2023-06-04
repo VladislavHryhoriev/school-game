@@ -23,12 +23,7 @@
 	}
 }
 
-.active {
-	transition: 0.2s;
-}
-
 .button:hover + .active {
-	transition: 0.2s;
 	border-color: $font-secondary-hover;
 }
 
@@ -41,7 +36,6 @@
 }
 
 .active {
-	border: 5px solid $font-secondary;
 	border-top: 0;
 	max-height: 100%;
 }

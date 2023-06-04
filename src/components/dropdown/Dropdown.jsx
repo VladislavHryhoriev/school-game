@@ -4,8 +4,8 @@ import s from './Dropdown.module.scss';
 import { useTranslation } from 'next-i18next';
 
 const Dropdown = ({ title, content }) => {
-	const [isOpened, setIsOpened] = useState(false);
 	const { t } = useTranslation('common');
+	const [isOpened, setIsOpened] = useState(false);
 
 	const newContent = content.new
 		.trim()

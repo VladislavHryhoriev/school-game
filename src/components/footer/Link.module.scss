@@ -1,9 +1,11 @@
 .link {
-	display: block;
+	display: flex;
+	align-items: center;
 	margin: 0 1em;
+	transition: 0.2s;
 
 	&:hover {
-		filter: brightness(100);
+		filter: brightness(2);
 	}
 
 	.icon {

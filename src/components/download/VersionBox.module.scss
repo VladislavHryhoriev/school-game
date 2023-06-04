@@ -14,10 +14,12 @@
 		margin: 0.5em 0;
 		padding: 0.5em 0.5em;
 		color: $font-white;
-		background: $font-secondary;
+		background: #444b;
+		border-radius: $radius-lg;
+		transition: 0.2s;
 
 		&:hover {
-			background: $font-secondary-hover;
+			background: #555d;
 		}
 		.image {
 		}

@@ -94,15 +94,15 @@ select {
 }
 
 .online {
-	border-left: 5px solid green;
+	color: #71ba51 !important;
 }
 
 .idle {
-	border-left: 5px solid goldenrod;
+	color: #ebbd63 !important;
 }
 
 .dnd {
-	border-left: 5px solid red;
+	color: #eb6361 !important;
 }
 
 @media screen and (max-width: 768px) {

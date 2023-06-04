@@ -6,10 +6,10 @@ const Logo = () => {
 		<div className={s.logo}>
 			<Image
 				className={s.image}
-				src={'/assets/discord.svg'}
+				src={'/assets/discord-logo.svg'}
 				width={100}
 				height={50}
-				alt='discord'
+				alt='discord-logo'
 			/>
 		</div>
 	);

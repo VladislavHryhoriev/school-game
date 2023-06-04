@@ -4,12 +4,16 @@
 	flex: 2;
 	max-width: 400px;
 	background: $background-primary;
-	border: 5px solid $font-secondary;
 	border-top-right-radius: $radius-lg;
 	border-bottom-right-radius: $radius-lg;
+	transition: 0.2s;
+
+	&:hover {
+		filter: brightness(0.8);
+	}
 
 	.members {
-		padding: $global-padding;
+		padding: calc($global-padding - 0.5em);
 	}
 
 	.title {
@@ -24,11 +28,9 @@
 
 	.list {
 		max-height: 500px;
-		border-bottom-left-radius: $radius-sm;
-		border-bottom-right-radius: $radius-sm;
 		overflow-y: scroll;
-		background: #2a2a2aaa;
-
+		background: #3336;
+		padding: 0 0.5em;
 		&::-webkit-scrollbar {
 			width: 5px;
 		}
@@ -41,7 +43,6 @@
 	.member {
 		display: flex;
 		align-items: center;
-		padding: 0 0.5em;
 		color: $font-secondary;
 		// justify-content: space-between;
 

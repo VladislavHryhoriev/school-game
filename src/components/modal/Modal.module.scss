@@ -9,7 +9,7 @@
 	top: 0;
 	width: 100vw;
 	height: 100vh;
-	background: #0004;
+	background: #0008;
 	opacity: 0;
 	transition: 0.2s;
 	pointer-events: none;
@@ -26,7 +26,7 @@
 	padding: $global-padding;
 	border-radius: $radius-lg;
 	transform: scale(0);
-	background: #333d;
+	background: $background-main;
 	transition: 0.2s;
 
 	&.active {
