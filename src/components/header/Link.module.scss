@@ -1,3 +1,5 @@
+@import '@/styles/base/variables';
+
 .linkWrapper {
 	display: flex;
 	align-items: center;
@@ -10,7 +12,7 @@
 	padding: 0.5em;
 	background: #333b;
 	border-radius: 0.5em;
-	transition: 0.2s;
+	transition: $global-transition;
 
 	&:hover {
 		background: #555b;

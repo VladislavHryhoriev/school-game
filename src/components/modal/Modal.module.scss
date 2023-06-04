@@ -11,7 +11,7 @@
 	height: 100vh;
 	background: #0008;
 	opacity: 0;
-	transition: 0.2s;
+	transition: $global-transition;
 	pointer-events: none;
 	z-index: 50;
 
@@ -27,7 +27,7 @@
 	border-radius: $radius-lg;
 	transform: scale(0);
 	background: $background-main;
-	transition: 0.2s;
+	transition: $global-transition;
 
 	&.active {
 		transform: scale(1);

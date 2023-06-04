@@ -39,7 +39,7 @@
 	background: $background-primary;
 	transform: translateX(100%);
 	text-align: center;
-	transition: 0.2s;
+	transition: $global-transition;
 	backdrop-filter: blur(5px);
 
 	&.activeMenu {

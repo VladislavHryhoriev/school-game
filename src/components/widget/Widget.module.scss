@@ -6,7 +6,7 @@
 	background: $background-primary;
 	border-top-right-radius: $radius-lg;
 	border-bottom-right-radius: $radius-lg;
-	transition: 0.2s;
+	transition: $global-transition;
 
 	&:hover {
 		filter: brightness(0.8);

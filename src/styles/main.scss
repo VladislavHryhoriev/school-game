@@ -5,9 +5,11 @@
 
 // Global
 
-::selection {
-	background: $font-primary;
-	color: $font-white;
+:root {
+	::selection {
+		background: $font-primary;
+		color: $font-white;
+	}
 }
 
 * {

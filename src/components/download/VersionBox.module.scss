@@ -16,7 +16,7 @@
 		color: $font-white;
 		background: #444b;
 		border-radius: $radius-lg;
-		transition: 0.2s;
+		transition: $global-transition;
 
 		&:hover {
 			background: #555d;

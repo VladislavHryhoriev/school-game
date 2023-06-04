@@ -27,7 +27,7 @@
 		padding: 1em;
 		border-radius: $radius-sm;
 		outline: none;
-		background: #555b;
+		background: $background-input;
 		color: $font-primary;
 	}
 }
@@ -41,7 +41,7 @@
 	border-radius: $radius-sm;
 	border: none;
 	outline: none;
-	background: #555b;
+	background: $background-input;
 	color: $font-primary;
 	resize: none;
 	overflow: hidden;
@@ -57,7 +57,7 @@
 	color: $font-white;
 	background: #5865f2;
 	border-radius: $radius-sm;
-	transition: 0.2s;
+	transition: $global-transition;
 
 	&:hover {
 		background: $font-secondary-hover;

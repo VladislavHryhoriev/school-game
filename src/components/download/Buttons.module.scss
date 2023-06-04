@@ -16,9 +16,9 @@
 	.btn {
 		padding: 0.5em 1em;
 		border-radius: $radius-sm;
-		background: #555b;
+		background: $background-input;
 		color: $font-white;
-		transition: 0.2s;
+		transition: $global-transition;
 
 		&:hover {
 			background: #444b;
@@ -50,7 +50,7 @@
 		outline: none;
 		border-top-left-radius: $radius-sm;
 		border-bottom-left-radius: $radius-sm;
-		background: #555b;
+		background: $background-input;
 		color: $font-primary;
 
 		&::placeholder {
@@ -64,7 +64,7 @@
 		border-bottom-right-radius: $radius-sm;
 		color: $font-white;
 		background: $font-secondary;
-		transition: 0.2s;
+		transition: $global-transition;
 
 		&:hover {
 			background: $font-secondary-hover;
@@ -84,7 +84,7 @@
 	border-radius: $radius-sm;
 	background: $font-secondary;
 	color: $font-white;
-	transition: 0.2s;
+	transition: $global-transition;
 
 	&:hover {
 		background: $font-secondary-hover;

@@ -11,7 +11,7 @@
 	border-radius: $radius-sm;
 	background: $font-secondary;
 	color: $font-white;
-	transition: 0.2s;
+	transition: $global-transition;
 
 	&:hover {
 		background: $font-secondary-hover;

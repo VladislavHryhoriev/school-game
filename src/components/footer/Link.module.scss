@@ -1,8 +1,10 @@
+@import '@/styles/base/variables';
+
 .link {
 	display: flex;
 	align-items: center;
 	margin: 0 1em;
-	transition: 0.2s;
+	transition: $global-transition;
 
 	&:hover {
 		filter: brightness(2);
