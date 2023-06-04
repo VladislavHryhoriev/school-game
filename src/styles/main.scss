@@ -89,6 +89,10 @@ input {
 	border: none;
 }
 
+select {
+	appearance: none;
+}
+
 .online {
 	border-left: 5px solid green;
 }

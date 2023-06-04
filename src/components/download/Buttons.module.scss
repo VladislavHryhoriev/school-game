@@ -16,11 +16,12 @@
 	.btn {
 		padding: 0.5em 1em;
 		border-radius: $radius-sm;
-		background: #f08080;
+		background: #555b;
 		color: $font-white;
+		transition: 0.2s;
 
 		&:hover {
-			background: #c56969;
+			background: #444b;
 		}
 	}
 
@@ -34,7 +35,7 @@
 		background: $font-secondary;
 
 		&:hover {
-			background: $font-secondary-hover;
+			background: $font-secondary;
 		}
 	}
 }
@@ -63,6 +64,7 @@
 		border-bottom-right-radius: $radius-sm;
 		color: $font-white;
 		background: $font-secondary;
+		transition: 0.2s;
 
 		&:hover {
 			background: $font-secondary-hover;
@@ -82,6 +84,7 @@
 	border-radius: $radius-sm;
 	background: $font-secondary;
 	color: $font-white;
+	transition: 0.2s;
 
 	&:hover {
 		background: $font-secondary-hover;

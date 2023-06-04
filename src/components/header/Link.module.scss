@@ -1,19 +1,27 @@
+.linkWrapper {
+	display: flex;
+	align-items: center;
+}
+
 .link {
 	display: flex;
 	justify-content: center;
 	margin: 0 0.2em;
-	transition: 0.3s;
+	padding: 0.5em;
+	background: #333b;
+	border-radius: 0.5em;
+	transition: 0.2s;
 
 	&:hover {
-		filter: invert(1);
+		background: #555b;
 	}
 }
 
 @media screen and (max-width: 768px) {
 	.image {
 		display: flex;
-		width: 4em;
-		height: 4em;
-		margin: 1em;
+		width: 1.5em;
+		height: 1.5em;
+		margin: 0.25em;
 	}
 }

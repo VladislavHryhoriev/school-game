@@ -11,6 +11,7 @@
 	border-radius: $radius-sm;
 	background: $font-secondary;
 	color: $font-white;
+	transition: 0.2s;
 
 	&:hover {
 		background: $font-secondary-hover;
@@ -22,7 +23,12 @@
 	}
 }
 
+.active {
+	transition: 0.2s;
+}
+
 .button:hover + .active {
+	transition: 0.2s;
 	border-color: $font-secondary-hover;
 }
 
@@ -56,7 +62,7 @@
 
 .text {
 	margin-top: 1em;
-	background: #121212dd;
+	background: #111b;
 	padding: 1em;
 	border-radius: $radius-lg;
 }
