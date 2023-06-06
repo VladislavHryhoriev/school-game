@@ -1,7 +1,7 @@
 import { PageNameContext } from '@/context/pageNameContext';
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
 import BurgerButton from './BurgerButton';
 import BurgerMenu from './BurgerMenu';
@@ -10,9 +10,9 @@ import Logo from './Logo';
 import Navigation from './Navigation';
 
 const Header = () => {
+	const { t } = useTranslation('common');
 	const [isActiveBurger, setIsActiveBurger] = useState(false);
 	const [currentPageName, setCurrentPageName] = useState('');
-	const { locale } = useRouter();
 
 	// get page name from MenuLink.jsx
 	const getPageName = (pageName) => {
@@ -20,7 +20,7 @@ const Header = () => {
 		setIsActiveBurger(!isActiveBurger);
 	};
 
-	const title = currentPageName || (locale === 'en' ? 'Home' : 'Главная');
+	const title = currentPageName || t('header.home');
 
 	return (
 		<PageNameContext.Provider value={getPageName}>
@@ -28,7 +28,10 @@ const Header = () => {
 				<div className={s.inner}>
 					<Logo />
 					<Navigation />
-					<Link className={s.logoBox} href={'/'}>
+					<Link
+						className={s.logoBox}
+						href={'/'}
+						onClick={() => setCurrentPageName(t('header.home'))}>
 						<Image
 							className={s.mobileLogo}
 							src={'/favicon.ico'}
