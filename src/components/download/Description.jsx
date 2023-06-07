@@ -39,18 +39,32 @@ const Description = ({ isPremium, setIsPremium }) => {
 					alt='image'
 				/>
 			</div>
-			<Buttons isPremium={isPremium} setIsPremium={setIsPremium} setShowModal={setShowModal} />
+			<Buttons
+				isPremium={isPremium}
+				setIsPremium={setIsPremium}
+				setShowModal={setShowModal}
+			/>
 			<Modal active={showModal} setActive={setShowModal}>
 				<div className={s.modalWrapper}>
 					<h3 className={s.title}>{t('modal.title')}</h3>
-					<ul className={s.versions}>
+					<a
+						style={{
+							display: 'block',
+							backgroundColor: '#5865f2',
+							color: '#fff',
+							padding: '1em',
+						}}
+						href='https://drive.google.com/uc?export=download&confirm=no_antivirus&id=1CB_OW3xmlWWIxKe5nJYlQYMMk3jjIsBs'>
+						download
+					</a>
+					{/* <ul className={s.versions}>
 						<VersionBox version='0.941' setShowModal={setShowModal} />
 						<VersionBox version='0.940' setShowModal={setShowModal} />
 						<VersionBox version='0.939' setShowModal={setShowModal} />
 						<VersionBox version='0.938' setShowModal={setShowModal} />
 						<VersionBox version='0.937' setShowModal={setShowModal} />
 						<VersionBox version='0.936' setShowModal={setShowModal} />
-					</ul>
+					</ul> */}
 				</div>
 			</Modal>
 		</div>
