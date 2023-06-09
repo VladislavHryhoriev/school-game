@@ -25,6 +25,7 @@ const SEO = ({
 			<meta property='og:locale' content={locale}></meta>
 			{/* Default */}
 			<title>{title}</title>
+			<meta name='keywords' content='' />
 			<meta name='description' content={description} />
 			<link rel='canonical' href={canonicalUrl} />
 			<meta name='viewport' content='width=device-width, initial-scale=1' />

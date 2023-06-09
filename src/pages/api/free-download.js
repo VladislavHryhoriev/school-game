@@ -1,28 +1,28 @@
-import fs from 'fs';
-import path from 'path';
+import axios from 'axios';
 
-export default function handler(req, res) {
-	const version = req.query.version;
+export default async function handler(req, res) {
+	const id = req.query.id;
 	const platform = req.query.platform;
-	const filename = `school-game${version}_${platform}`;
+	const version = req.query.version;
 
-	const filePath = path.join(
-		process.cwd(),
-		`src/packages/free/${platform}/${version}_${platform}.rar`
-	);
+	const fileUrl = `https://drive.google.com/uc?export=download&confirm=no_antivirus&id=${id}`;
 
 	try {
-		if (fs.existsSync(filePath)) {
-			res.setHeader('Content-disposition', `attachment; filename=${filename}.rar`);
-			res.setHeader('Content-type', 'application/rar');
+		const response = await axios({
+			url: fileUrl,
+			method: 'GET',
+			responseType: 'stream',
+		});
 
-			const fileStream = fs.createReadStream(filePath);
+		res.setHeader('Content-Type', 'application/zip');
+		res.setHeader(
+			'Content-Disposition',
+			`attachment; filename="school-game-${version}_${platform}.zip"`
+		);
 
-			fileStream.pipe(res);
-		} else {
-			res.status(500).end();
-		}
+		response.data.pipe(res);
 	} catch (error) {
-		console.log('Error downloading: ', error);
+		console.error('File download error:', error);
+		res.status(500).send('File download error.');
 	}
 }

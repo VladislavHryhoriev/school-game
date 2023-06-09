@@ -1,15 +1,17 @@
+import { DownloadVersionLinksContext } from '@/context/downloadVersionLinksContext';
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Modal from '../modal/Modal';
 import Buttons from './Buttons';
 import s from './Description.module.scss';
 import Freemium from './Freemium';
 import VersionBox from './VersionBox';
-import { useTranslation } from 'next-i18next';
 
 const Description = ({ isPremium, setIsPremium }) => {
-	const [showModal, setShowModal] = useState(false);
+	const downloadVersions = useContext(DownloadVersionLinksContext);
 	const { t } = useTranslation('common');
+	const [showModal, setShowModal] = useState(false);
 
 	const free = {
 		title: t('download.free.title'),
@@ -47,24 +49,15 @@ const Description = ({ isPremium, setIsPremium }) => {
 			<Modal active={showModal} setActive={setShowModal}>
 				<div className={s.modalWrapper}>
 					<h3 className={s.title}>{t('modal.title')}</h3>
-					<a
-						style={{
-							display: 'block',
-							backgroundColor: '#5865f2',
-							color: '#fff',
-							padding: '1em',
-						}}
-						href='https://drive.google.com/uc?export=download&confirm=no_antivirus&id=1CB_OW3xmlWWIxKe5nJYlQYMMk3jjIsBs'>
-						download
-					</a>
-					{/* <ul className={s.versions}>
-						<VersionBox version='0.941' setShowModal={setShowModal} />
-						<VersionBox version='0.940' setShowModal={setShowModal} />
-						<VersionBox version='0.939' setShowModal={setShowModal} />
-						<VersionBox version='0.938' setShowModal={setShowModal} />
-						<VersionBox version='0.937' setShowModal={setShowModal} />
-						<VersionBox version='0.936' setShowModal={setShowModal} />
-					</ul> */}
+					<ul className={s.versions}>
+						{downloadVersions.map((downloadVersion) => (
+							<VersionBox
+								key={downloadVersion.version}
+								setShowModal={setShowModal}
+								{...downloadVersion}
+							/>
+						))}
+					</ul>
 				</div>
 			</Modal>
 		</div>

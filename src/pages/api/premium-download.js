@@ -11,7 +11,10 @@ export default function handler(req, res) {
 			res.status(404).json({ status: 'failed token' });
 		} else {
 			if (fs.existsSync(filePath)) {
-				res.setHeader('Content-disposition', `attachment; filename=${req.query.v}.rar`);
+				res.setHeader(
+					'Content-disposition',
+					`attachment; filename=${req.query.v}.rar`
+				);
 				res.setHeader('Content-type', 'application/rar');
 
 				const fileStream = fs.createReadStream(filePath);

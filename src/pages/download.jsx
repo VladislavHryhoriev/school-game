@@ -1,5 +1,7 @@
 import Description from '@/components/download/Description';
 import Images from '@/components/download/Images';
+import { DownloadVersionLinksContext } from '@/context/downloadVersionLinksContext';
+import { downloadVersionLinks } from '@/data/downloadVersionLinks';
 import s from '@/styles/pages/download.module.scss';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
@@ -32,7 +34,13 @@ export default function Page() {
 				<div className='container'>
 					<div className={s.inner}>
 						<div className={s.info}>
-							<Description isPremium={isPremium} setIsPremium={setIsPremium} />
+							<DownloadVersionLinksContext.Provider
+								value={downloadVersionLinks}>
+								<Description
+									isPremium={isPremium}
+									setIsPremium={setIsPremium}
+								/>
+							</DownloadVersionLinksContext.Provider>
 							<Images images={images} />
 						</div>
 					</div>

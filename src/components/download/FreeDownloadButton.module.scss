@@ -1,0 +1,23 @@
+@import '@/styles/base/variables';
+
+.version {
+	display: flex;
+	margin: 0.5em 0;
+	padding: 0.5em 0.5em;
+	color: $font-white;
+	background: #444b;
+	border-radius: $radius-lg;
+	transition: $global-transition;
+
+	&:hover {
+		background: #555d;
+	}
+	.image {
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.version {
+		flex-direction: column;
+	}
+}
