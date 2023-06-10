@@ -1,5 +1,12 @@
 import axios from 'axios';
 
+export const config = {
+	api: {
+		responseLimit: false,
+		bodyParser: false,
+	},
+};
+
 export default async function handler(req, res) {
 	const id = req.query.id;
 	const platform = req.query.platform;
@@ -26,9 +33,3 @@ export default async function handler(req, res) {
 		res.status(500).send('File download error.');
 	}
 }
-
-export const config = {
-	api: {
-		responseLimit: false,
-	},
-};
