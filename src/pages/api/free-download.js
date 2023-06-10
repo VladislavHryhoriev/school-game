@@ -26,3 +26,9 @@ export default async function handler(req, res) {
 		res.status(500).send('File download error.');
 	}
 }
+
+export const config = {
+	api: {
+		responseLimit: false,
+	},
+};
