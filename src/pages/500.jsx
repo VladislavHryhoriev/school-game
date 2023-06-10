@@ -2,7 +2,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
-export default function ClientError() {
+export default function ServerError() {
 	const router = useRouter();
 
 	useEffect(() => {
@@ -21,7 +21,7 @@ export default function ClientError() {
 				height: 'calc(80vh - 80px)',
 				fontSize: '1.5em',
 			}}>
-			404: Page Not Found
+			500: Internal Server Error
 		</div>
 	);
 }
