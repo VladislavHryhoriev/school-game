@@ -28,8 +28,22 @@ const FreeDownloadButton = ({
 		// 		alt='image'
 		// 	/>
 		// </button>
+
+		// <Link
+		// 	href={`https://drive.google.com/uc?export=download&confirm=no_antivirus&id=${fileId}`}
+		// 	onClick={() => handleClick()}
+		// 	className={s.version}>
+		// 	<Image
+		// 		className={s.image}
+		// 		src={`/assets/download/${platformName}.png`}
+		// 		width={32}
+		// 		height={32}
+		// 		alt='image'
+		// 	/>
+		// </Link>
+
 		<Link
-			href={`https://drive.google.com/uc?export=download&confirm=no_antivirus&id=${fileId}`}
+			href={`https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&key=AIzaSyCfqio3D02TmF-O8czXMON_NGJQp7fnEuk`}
 			onClick={() => handleClick()}
 			className={s.version}>
 			<Image
