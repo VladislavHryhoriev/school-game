@@ -1,28 +1,35 @@
-// import axios from 'axios';
+import axios from 'axios';
 
-// export default async function handler(req, res) {
-// 	const id = req.query.id;
-// 	const platform = req.query.platform;
-// 	const version = req.query.version;
+export const config = {
+	api: {
+		responseLimit: false,
+		// responseLimit: '8mb',
+	},
+};
 
-// 	const fileUrl = `https://drive.google.com/uc?export=download&confirm=no_antivirus&id=${id}`;
+export default async function handler(req, res) {
+	const fileId = req.query.fileId;
+	const platform = req.query.platform;
+	const version = req.query.version;
 
-// 	try {
-// 		const response = await axios({
-// 			url: fileUrl,
-// 			method: 'GET',
-// 			responseType: 'stream',
-// 		});
+	const fileUrl = `https://drive.google.com/uc?export=download&confirm=no_antivirus&id=${fileId}`;
 
-// 		res.setHeader('Content-Type', 'application/zip');
-// 		res.setHeader(
-// 			'Content-Disposition',
-// 			`attachment; filename="school-game-${version}_${platform}.zip"`
-// 		);
+	try {
+		const response = await axios({
+			url: fileUrl,
+			method: 'GET',
+			responseType: 'stream',
+		});
 
-// 		response.data.pipe(res);
-// 	} catch (error) {
-// 		console.error('File download error:', error);
-// 		res.status(500).send('File download error.');
-// 	}
-// }
+		res.setHeader('Content-Type', 'application/zip');
+		res.setHeader(
+			'Content-Disposition',
+			`attachment; filename="school-game-${version}_${platform}.zip"`
+		);
+
+		response.data.pipe(res);
+	} catch (error) {
+		console.error('File download error:', error);
+		res.status(500).send('File download error.');
+	}
+}
