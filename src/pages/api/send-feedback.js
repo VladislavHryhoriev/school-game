@@ -20,7 +20,7 @@ export default async function handler(req, res) {
 			const mailOptions = {
 				from: 'kaitos8o@slothscommand.ru',
 				to: 'kaitos8o@slothscommand.ru',
-				subject: 'Обратная связь',
+				subject: `Feedback: ${name}`,
 				text: `
 				Имя: ${name}
 				Адрес электронной почты: ${email}
