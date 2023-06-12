@@ -11,8 +11,8 @@
 	height: 100vh;
 	background: #0008;
 	opacity: 0;
-	transition: $global-transition;
 	pointer-events: none;
+	transition: $global-transition;
 	z-index: 50;
 
 	&.active {
