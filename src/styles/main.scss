@@ -107,9 +107,19 @@ select {
 	color: #eb6361 !important;
 }
 
+.up-arrow-image {
+	display: flex;
+	padding: 10px;
+	cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
 	.background {
 		background: linear-gradient(120deg, #4e287a, #47439a, #345db8);
+	}
+
+	.up-arrow-image {
+		display: none;
 	}
 
 	.swiper-button-prev,

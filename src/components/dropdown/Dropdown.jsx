@@ -24,9 +24,7 @@ const Dropdown = ({ title, content }) => {
 				onClick={() => setIsOpened(!isOpened)}>
 				{title}
 			</button>
-			<div
-				className={`${s.content} ${isOpened ? s.active : ''}`}
-				onClick={() => setIsOpened(!isOpened)}>
+			<div className={`${s.content} ${isOpened ? s.active : ''}`}>
 				<div className={s.new}>
 					<h3 className={s.header}>{t('changelog.new')}:</h3>
 					{newContent.map((item) => (
