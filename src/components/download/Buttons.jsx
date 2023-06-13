@@ -7,8 +7,9 @@ const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 	const router = useRouter();
 	const { t } = useTranslation('common');
 	const [email, setEmail] = useState('');
-	const [statuslog, setStatusLog] = useState('');
+	const [key, setKey] = useState('');
 	const [status, setStatus] = useState('');
+	const [statuslog, setStatusLog] = useState('');
 	const [buttonText, setButtonText] = useState(t('download.buttons.get'));
 	const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 	const buttonDefaultText = t('download.buttons.get');
@@ -20,8 +21,13 @@ const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 		setButtonText('...');
 
 		try {
-			const formatEmail = email.trim().toLowerCase();
-			const res = await fetch(`/api/get-email?email=${formatEmail}`);
+			const res = await fetch(`/api/get-email`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(email),
+			});
 			const { status } = await res.json();
 			// difference stateStatus and status
 			setStatus(status);
@@ -29,7 +35,9 @@ const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 			switch (status) {
 				case 'ok':
 					setStatusLog(t('download-status.ok'));
-
+					const time = new Date();
+					const timeKey = time.getMonth() + time.getHours() + time.getMinutes();
+					setKey((timeKey + 5659).toString(34));
 					break;
 				case 'supporter':
 					setStatusLog(t('download-status.supporter'));
@@ -52,12 +60,10 @@ const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 
 	useEffect(() => {
 		if (status === 'ok') {
-			const archiveName = 'school-game_latest-0.942';
-			const token = 'RdHl2w';
-			router.push(`/api/premium-download?v=${archiveName}&token=${token}`);
+			router.push(`/api/premium-download?key=${key}`);
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [status]);
+	}, [key]);
 
 	return (
 		<div className={s.buttons}>
