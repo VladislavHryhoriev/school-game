@@ -4,8 +4,6 @@ export default async function handler(req, res) {
 	if (req.method === 'POST') {
 		const email = req.body;
 
-		console.log(email);
-
 		try {
 			const connection = mysql.createConnection({
 				host: process.env.MYSQL_HOST,

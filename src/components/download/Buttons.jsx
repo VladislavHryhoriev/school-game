@@ -3,6 +3,15 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import s from './Buttons.module.scss';
 
+function generateKeyFromDate(date) {
+	const utcYear = date.getUTCFullYear();
+	const utcMonth = date.getUTCMonth();
+	const utcDate = date.getUTCDate();
+	const utcHours = date.getUTCHours();
+	const utcMinutes = date.getUTCMinutes();
+	return utcYear + utcMonth + utcDate + utcHours + utcMinutes;
+}
+
 const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 	const router = useRouter();
 	const { t } = useTranslation('common');
@@ -23,21 +32,18 @@ const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 		try {
 			const res = await fetch(`/api/get-email`, {
 				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
+				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(email),
 			});
 			const { status } = await res.json();
-			// difference stateStatus and status
+
+			// * difference stateStatus and status need calling api for useEffect
 			setStatus(status);
 
 			switch (status) {
 				case 'ok':
 					setStatusLog(t('download-status.ok'));
-					const time = new Date();
-					const timeKey = time.getMonth() + time.getHours() + time.getMinutes();
-					setKey((timeKey + 5659).toString(34));
+					setKey(generateKeyFromDate(new Date()).toString(34));
 					break;
 				case 'supporter':
 					setStatusLog(t('download-status.supporter'));
