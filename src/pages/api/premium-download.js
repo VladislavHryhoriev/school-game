@@ -1,23 +1,14 @@
+import { generateKeyFromDate } from '@/lib/generateKeyFromDate';
 import fs from 'fs';
-import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
-
-function generateKeyFromDate(date) {
-	const utcYear = date.getUTCFullYear();
-	const utcMonth = date.getUTCMonth();
-	const utcDate = date.getUTCDate();
-	const utcHours = date.getUTCHours();
-	const utcMinutes = date.getUTCMinutes();
-	return utcYear + utcMonth + utcDate + utcHours + utcMinutes;
-}
 
 export default function handler(req, res) {
 	const filePath = path.join(process.cwd(), 'src/packages/premium/latest.rar');
 	const clientKey = req.query.key;
-	const serverKey = generateKeyFromDate(new Date()).toString(34);
+	const key = generateKeyFromDate();
 
 	try {
-		if (clientKey !== serverKey) {
+		if (key !== clientKey) {
 			res.status(405).json({ status: 'Wrong key' });
 		} else {
 			if (fs.existsSync(filePath)) {

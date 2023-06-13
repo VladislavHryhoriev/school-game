@@ -3,15 +3,6 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import s from './Buttons.module.scss';
 
-function generateKeyFromDate(date) {
-	const utcYear = date.getUTCFullYear();
-	const utcMonth = date.getUTCMonth();
-	const utcDate = date.getUTCDate();
-	const utcHours = date.getUTCHours();
-	const utcMinutes = date.getUTCMinutes();
-	return utcYear + utcMonth + utcDate + utcHours + utcMinutes;
-}
-
 const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 	const router = useRouter();
 	const { t } = useTranslation('common');
@@ -35,15 +26,15 @@ const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(email),
 			});
-			const { status } = await res.json();
+			const { status, key } = await res.json();
 
-			// * difference stateStatus and status need calling api for useEffect
+			// difference stateStatus and status need calling api for useEffect
 			setStatus(status);
 
 			switch (status) {
 				case 'ok':
 					setStatusLog(t('download-status.ok'));
-					setKey(generateKeyFromDate(new Date()).toString(34));
+					setKey(key);
 					break;
 				case 'supporter':
 					setStatusLog(t('download-status.supporter'));

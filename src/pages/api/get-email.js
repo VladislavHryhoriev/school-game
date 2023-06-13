@@ -1,3 +1,4 @@
+import { generateKeyFromDate } from '@/lib/generateKeyFromDate';
 import mysql from 'mysql2';
 
 export default async function handler(req, res) {
@@ -22,7 +23,8 @@ export default async function handler(req, res) {
 
 			if (user) {
 				if (user.Tier !== 'Supporter') {
-					return res.status(200).json({ status: 'ok' });
+					const key = generateKeyFromDate();
+					return res.status(200).json({ status: 'ok', key });
 				}
 
 				if (user.Tier === 'Supporter') {
