@@ -1,66 +1,38 @@
 import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { v4 } from 'uuid';
+import Modal from '../modal/Modal';
 import s from './Buttons.module.scss';
+import PremiumDownloadButton from './PremiumDownloadButton';
+import VersionBox from './VersionBox';
 
 const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
-	const router = useRouter();
 	const { t } = useTranslation('common');
 	const [email, setEmail] = useState('');
-	const [key, setKey] = useState('');
-	const [status, setStatus] = useState('');
 	const [statuslog, setStatusLog] = useState('');
 	const [buttonText, setButtonText] = useState(t('download.buttons.get'));
 	const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-	const buttonDefaultText = t('download.buttons.get');
+	const [activeModal, setActiveModal] = useState(false);
 
 	const handleButtonClick = async (e) => {
 		e.preventDefault();
-		setIsButtonDisabled(true);
-		setStatusLog('');
-		setButtonText('...');
-
-		try {
-			const res = await fetch(`/api/get-email`, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(email),
-			});
-			const { status, key } = await res.json();
-
-			// difference stateStatus and status need calling api for useEffect
-			setStatus(status);
-
-			switch (status) {
-				case 'ok':
-					setStatusLog(t('download-status.ok'));
-					setKey(key);
-					break;
-				case 'supporter':
-					setStatusLog(t('download-status.supporter'));
-					break;
-				case 'failed':
-					setStatusLog(t('download-status.failed'));
-					break;
-				default:
-					setStatusLog('Server Error');
-					break;
-			}
-
-			setIsButtonDisabled(false);
-			setButtonText(buttonDefaultText);
-			setTimeout(() => setStatusLog(''), 5000);
-		} catch (error) {
-			console.error('Error fetching email:', error);
-		}
+		setActiveModal(true);
 	};
 
-	useEffect(() => {
-		if (status === 'ok') {
-			router.push(`/api/premium-download?key=${key}`);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [key]);
+	const platforms = [
+		{
+			name: 'windows',
+		},
+		{
+			name: 'linux',
+		},
+		{
+			name: 'mac',
+		},
+		{
+			name: 'android',
+		},
+	];
 
 	return (
 		<div className={s.buttons}>
@@ -93,6 +65,24 @@ const Buttons = ({ isPremium, setIsPremium, setShowModal }) => {
 					<button type='submit' disabled={isButtonDisabled} className={s.send}>
 						{buttonText}
 					</button>
+					<Modal active={activeModal} setActive={setActiveModal}>
+						<h3 className={s.title}>{t('modal.platform-title')}</h3>
+						<ul className={s.versions}>
+							<VersionBox>
+								{platforms.map((platforms) => (
+									<PremiumDownloadButton
+										key={v4()}
+										setActiveModal={setActiveModal}
+										platformName={platforms.name}
+										setIsButtonDisabled={setIsButtonDisabled}
+										setStatusLog={setStatusLog}
+										setButtonText={setButtonText}
+										email={email}
+									/>
+								))}
+							</VersionBox>
+						</ul>
+					</Modal>
 				</form>
 			) : (
 				<button className={s.download} onClick={() => setShowModal(true)}>

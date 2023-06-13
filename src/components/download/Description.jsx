@@ -7,6 +7,8 @@ import Buttons from './Buttons';
 import s from './Description.module.scss';
 import Freemium from './Freemium';
 import VersionBox from './VersionBox';
+import FreeDownloadButton from './FreeDownloadButton';
+import { v4 } from 'uuid';
 
 const Description = ({ isPremium, setIsPremium }) => {
 	const downloadVersions = useContext(DownloadVersionLinksContext);
@@ -47,18 +49,24 @@ const Description = ({ isPremium, setIsPremium }) => {
 				setShowModal={setShowModal}
 			/>
 			<Modal active={showModal} setActive={setShowModal}>
-				<div className={s.modalWrapper}>
-					<h3 className={s.title}>{t('modal.title')}</h3>
-					<ul className={s.versions}>
-						{downloadVersions.map((downloadVersion) => (
-							<VersionBox
-								key={downloadVersion.version}
-								setShowModal={setShowModal}
-								{...downloadVersion}
-							/>
-						))}
-					</ul>
-				</div>
+				<h3 className={s.title}>{t('modal.title')}</h3>
+				<ul className={s.versions}>
+					{downloadVersions.map((downloadVersion) => (
+						<VersionBox
+							key={downloadVersion.version}
+							setShowModal={setShowModal}
+							{...downloadVersion}>
+							{downloadVersion.platforms.map((platform) => (
+								<FreeDownloadButton
+									key={v4()}
+									setShowModal={setShowModal}
+									version={downloadVersion.version}
+									{...platform}
+								/>
+							))}
+						</VersionBox>
+					))}
+				</ul>
 			</Modal>
 		</div>
 	);

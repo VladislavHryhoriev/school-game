@@ -40,7 +40,8 @@
 	},
 
 	"modal": {
-		"title": "Select version"
+		"title": "Select version",
+		"platform-title": "Select platform"
 	},
 
 	"changelog": {
