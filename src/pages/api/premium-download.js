@@ -8,7 +8,7 @@ export default function handler(req, res) {
 
 		const filePath = path.join(
 			process.cwd(),
-			`src/packages/premium/latest-${platform}.rar`
+			`src/packages/premium/latest-${platform}.zip`
 		);
 		const clientKey = req.query.key;
 		const key = generateKeyFromDate();
@@ -20,9 +20,9 @@ export default function handler(req, res) {
 				if (fs.existsSync(filePath)) {
 					res.setHeader(
 						'Content-disposition',
-						`attachment; filename=school-game-latest_${platform}.rar`
+						`attachment; filename=school-game-latest_${platform}.zip`
 					);
-					res.setHeader('Content-type', 'application/rar');
+					res.setHeader('Content-type', 'application/zip');
 					const fileStream = fs.createReadStream(filePath);
 
 					fileStream.pipe(res);
