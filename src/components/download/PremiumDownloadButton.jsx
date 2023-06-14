@@ -38,7 +38,6 @@ const PremiumDownloadButton = ({
 					router.push(
 						`/api/premium-download?key=${key}&platform=${platformName}`
 					);
-					console.log(key);
 					setKey(key);
 					break;
 				case 'supporter':

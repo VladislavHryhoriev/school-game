@@ -4,16 +4,15 @@ import path from 'path';
 
 export default function handler(req, res) {
 	if (!!req.query.key) {
-		const platform = req.query.platform;
-
-		const filePath = path.join(
-			process.cwd(),
-			`src/packages/premium/latest-${platform}.zip`
-		);
-		const clientKey = req.query.key;
-		const key = generateKeyFromDate();
-
 		try {
+			const platform = req.query.platform;
+			const filePath = path.join(
+				process.cwd(),
+				`src/packages/premium/latest-${platform}.zip`
+			);
+			const clientKey = req.query.key;
+			const key = generateKeyFromDate();
+
 			if (key !== clientKey) {
 				res.status(405).json({ status: 'Wrong key' });
 			} else {
@@ -23,6 +22,7 @@ export default function handler(req, res) {
 						`attachment; filename=school-game-latest_${platform}.zip`
 					);
 					res.setHeader('Content-type', 'application/zip');
+
 					const fileStream = fs.createReadStream(filePath);
 
 					fileStream.pipe(res);
