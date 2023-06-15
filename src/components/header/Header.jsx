@@ -1,48 +1,43 @@
 import { PageNameContext } from '@/context/pageNameContext';
-import { useTranslation } from 'next-i18next';
-import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
-import BurgerButton from './BurgerButton';
-import BurgerMenu from './BurgerMenu';
 import s from './Header.module.scss';
 import Logo from './Logo';
 import Navigation from './Navigation';
+import BurgerNavigation from './BurgerNavigation';
 
 const Header = () => {
-	const { t } = useTranslation('common');
-	const [isActiveBurger, setIsActiveBurger] = useState(false);
+	const [isOpenBurger, setIsOpenBurger] = useState(false);
 	const [currentPageName, setCurrentPageName] = useState('');
+	const { push, asPath } = useRouter();
 
 	// get page name from MenuLink.jsx
 	const getPageName = (pageName) => {
 		setCurrentPageName(pageName);
-		setIsActiveBurger(!isActiveBurger);
+		setIsOpenBurger(!isOpenBurger);
 	};
 
-	const title = currentPageName || t('header.home');
+	const handleChangeLanguage = (e) => {
+		const locale = e.target.value;
+		push(asPath, asPath, { locale });
+	};
 
 	return (
-		<PageNameContext.Provider value={getPageName}>
+		<PageNameContext.Provider
+			value={{ getPageName, currentPageName, setCurrentPageName }}>
 			<header className={s.header}>
 				<div className={s.inner}>
 					<Logo />
-					<Navigation />
-					<Link
-						className={s.logoBox}
-						href={'/'}
-						onClick={() => setCurrentPageName(t('header.home'))}>
-						<Image
-							className={s.mobileLogo}
-							src={'/favicon.ico'}
-							width={40}
-							height={40}
-							alt='little-logo'
-						/>
-					</Link>
-					<h2 className={`${s.currentPage} ${s.showBurger}`}>{title}</h2>
-					<BurgerButton isActive={isActiveBurger} setIsActive={setIsActiveBurger} />
-					<BurgerMenu isActive={isActiveBurger} />
+					<Navigation
+						isOpen={isOpenBurger}
+						device={'desktop'}
+						handleChangeLanguage={handleChangeLanguage}
+					/>
+					<BurgerNavigation
+						handleChangeLanguage={handleChangeLanguage}
+						isOpenBurger={isOpenBurger}
+						setIsOpenBurger={setIsOpenBurger}
+					/>
 				</div>
 			</header>
 		</PageNameContext.Provider>

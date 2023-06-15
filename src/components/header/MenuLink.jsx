@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { PageNameContext } from '@/context/pageNameContext';
 
 const MenuLink = ({ title, page }) => {
-	const getPageName = useContext(PageNameContext);
+	const { getPageName } = useContext(PageNameContext);
 
 	return (
 		<li>

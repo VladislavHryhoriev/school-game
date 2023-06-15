@@ -6,12 +6,12 @@ export default function handler(req, res) {
 	if (!!req.query.key) {
 		try {
 			const platform = req.query.platform;
+			const clientKey = req.query.key;
+			const key = generateKeyFromDate();
 			const filePath = path.join(
 				process.cwd(),
 				`src/packages/premium/latest-${platform}.zip`
 			);
-			const clientKey = req.query.key;
-			const key = generateKeyFromDate();
 
 			if (key !== clientKey) {
 				res.status(405).json({ status: 'Wrong key' });

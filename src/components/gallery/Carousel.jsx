@@ -3,6 +3,18 @@ import { Autoplay, Keyboard, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import s from './Carousel.module.scss';
 
+const images = [
+	'/assets/carousel/slide-1.webp',
+	'/assets/carousel/slide-2.webp',
+	'/assets/carousel/slide-3.webp',
+	'/assets/carousel/slide-4.webp',
+	'/assets/carousel/slide-5.webp',
+	'/assets/carousel/slide-6.webp',
+	'/assets/carousel/slide-7.webp',
+	'/assets/carousel/slide-8.webp',
+	'/assets/carousel/slide-9.webp',
+];
+
 const Carousel = () => {
 	return (
 		<div className={s.carousel}>
@@ -19,87 +31,17 @@ const Carousel = () => {
 					delay: 4500,
 					disableOnInteraction: false,
 				}}>
-				<SwiperSlide>
-					<Image
-						className='slide'
-						src={'/assets/carousel/slide-1.webp'}
-						width={1280}
-						height={720}
-						alt='slide'
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Image
-						className='slide'
-						src={'/assets/carousel/slide-2.webp'}
-						width={1280}
-						height={720}
-						alt='slide'
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Image
-						className='slide'
-						src={'/assets/carousel/slide-3.webp'}
-						width={1280}
-						height={720}
-						alt='slide'
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Image
-						className='slide'
-						src={'/assets/carousel/slide-4.webp'}
-						width={1280}
-						height={720}
-						alt='slide'
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Image
-						className='slide'
-						src={'/assets/carousel/slide-5.webp'}
-						width={1280}
-						height={720}
-						alt='slide'
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Image
-						className='slide'
-						src={'/assets/carousel/slide-6.webp'}
-						width={1280}
-						height={720}
-						alt='slide'
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Image
-						className='slide'
-						src={'/assets/carousel/slide-7.webp'}
-						width={1280}
-						height={720}
-						alt='slide'
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Image
-						className='slide'
-						src={'/assets/carousel/slide-8.webp'}
-						width={1280}
-						height={720}
-						alt='slide'
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Image
-						className='slide'
-						src={'/assets/carousel/slide-9.webp'}
-						width={1280}
-						height={720}
-						alt='slide'
-					/>
-				</SwiperSlide>
+				{images.map((link) => (
+					<SwiperSlide key={link}>
+						<Image
+							className='slide'
+							src={link}
+							width={1280}
+							height={720}
+							alt='slide'
+						/>
+					</SwiperSlide>
+				))}
 			</Swiper>
 		</div>
 	);

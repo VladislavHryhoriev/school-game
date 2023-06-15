@@ -6,7 +6,6 @@ const FeedbackForm = () => {
 	const { t } = useTranslation('common');
 	const defaultButtonText = t('form.button');
 	const [buttonText, setButtonText] = useState(defaultButtonText);
-
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');

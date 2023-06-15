@@ -1,18 +1,21 @@
 import Image from 'next/image';
-import s from './Navigation.module.scss';
+import s from './BurgerButton.module.scss';
+import cn from 'classnames';
 
 const BurgerButton = ({ isActive, setIsActive }) => {
 	return (
-		<button className={`${s.burgerButton} ${s.showBurger}`} onClick={() => setIsActive(!isActive)}>
+		<button
+			className={cn(s.burgerButton, s.showBurger)}
+			onClick={() => setIsActive(!isActive)}>
 			<Image
-				className={`${s.burgerIcon} ${!isActive ? s.iconActive : ''}`}
+				className={cn(s.burgerIcon, { [s.iconActive]: !isActive })}
 				src={'/icons/burger.svg'}
 				width={40}
 				height={40}
 				alt='icon-burger'
 			/>
 			<Image
-				className={`${s.burgerIcon} ${isActive ? s.iconActive : ''}`}
+				className={cn(s.burgerIcon, { [s.iconActive]: isActive })}
 				src={'/icons/burger-close.svg'}
 				width={40}
 				height={40}

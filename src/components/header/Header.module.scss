@@ -16,23 +16,6 @@
 	font-weight: 500;
 }
 
-.showBurger {
-	display: none;
-}
-
-// Phone
-
-.logoBox {
-	display: none;
-	align-items: center;
-	margin-left: 1em;
-}
-
-.currentPage {
-	margin-left: 1em;
-	font-size: 1.5em;
-}
-
 @media screen and (max-width: 768px) {
 	.inner {
 		height: auto;
@@ -40,13 +23,5 @@
 
 	.navigation {
 		display: none;
-	}
-
-	.logoBox {
-		display: flex;
-	}
-
-	.showBurger {
-		display: block;
 	}
 }

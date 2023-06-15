@@ -11,12 +11,11 @@ const Layout = ({ children }) => {
 			<ScrollToTop
 				showUnder={160}
 				style={{
-					borderRadius: '2em',
-					// overflow: 'hidden',
-					background: '#5865f2',
-					zIndex: 100,
 					right: 50,
 					bottom: 50,
+					borderRadius: '2em',
+					background: '#5865f2',
+					zIndex: 10,
 				}}>
 				<Image
 					className='up-arrow-image'

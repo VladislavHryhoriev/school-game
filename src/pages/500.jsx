@@ -2,6 +2,14 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
+export async function getStaticProps({ locale }) {
+	return {
+		props: {
+			...(await serverSideTranslations(locale, ['common'])),
+		},
+	};
+}
+
 export default function ServerError() {
 	const router = useRouter();
 
@@ -24,12 +32,4 @@ export default function ServerError() {
 			500: Internal Server Error
 		</div>
 	);
-}
-
-export async function getStaticProps({ locale }) {
-	return {
-		props: {
-			...(await serverSideTranslations(locale, ['common'])),
-		},
-	};
 }

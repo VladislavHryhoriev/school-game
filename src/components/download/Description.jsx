@@ -1,19 +1,15 @@
-import { DownloadVersionLinksContext } from '@/context/downloadVersionLinksContext';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import Modal from '../modal/Modal';
 import Buttons from './Buttons';
 import s from './Description.module.scss';
 import Freemium from './Freemium';
-import VersionBox from './VersionBox';
-import FreeDownloadButton from './FreeDownloadButton';
-import { v4 } from 'uuid';
+import ModalContentFree from './ModalContentFree';
 
 const Description = ({ isPremium, setIsPremium }) => {
-	const downloadVersions = useContext(DownloadVersionLinksContext);
 	const { t } = useTranslation('common');
-	const [showModal, setShowModal] = useState(false);
+	const [openModal, setOpenModal] = useState(false);
 
 	const free = {
 		title: t('download.free.title'),
@@ -46,27 +42,10 @@ const Description = ({ isPremium, setIsPremium }) => {
 			<Buttons
 				isPremium={isPremium}
 				setIsPremium={setIsPremium}
-				setShowModal={setShowModal}
+				setOpenModal={setOpenModal}
 			/>
-			<Modal active={showModal} setActive={setShowModal}>
-				<h3 className={s.title}>{t('modal.title')}</h3>
-				<ul className={s.versions}>
-					{downloadVersions.map((downloadVersion) => (
-						<VersionBox
-							key={downloadVersion.version}
-							setShowModal={setShowModal}
-							{...downloadVersion}>
-							{downloadVersion.platforms.map((platform) => (
-								<FreeDownloadButton
-									key={v4()}
-									setShowModal={setShowModal}
-									version={downloadVersion.version}
-									{...platform}
-								/>
-							))}
-						</VersionBox>
-					))}
-				</ul>
+			<Modal openModal={openModal} setOpenModal={setOpenModal}>
+				<ModalContentFree setShowModal={setOpenModal} />
 			</Modal>
 		</div>
 	);

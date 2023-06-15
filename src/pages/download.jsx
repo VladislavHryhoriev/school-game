@@ -7,22 +7,29 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import { useState } from 'react';
 
+const links = {
+	free: [
+		'/assets/overview/free-1.webp',
+		'/assets/overview/free-2.webp',
+		'/assets/overview/free-3.webp',
+	],
+	premium: [
+		'/assets/overview/premium-1.webp',
+		'/assets/overview/premium-2.webp',
+		'/assets/overview/premium-3.webp',
+	],
+};
+
+export async function getStaticProps({ locale }) {
+	return {
+		props: {
+			...(await serverSideTranslations(locale, ['common'])),
+		},
+	};
+}
+
 export default function Page() {
 	const [isPremium, setIsPremium] = useState(false);
-
-	const links = {
-		free: [
-			'/assets/overview/free-1.webp',
-			'/assets/overview/free-2.webp',
-			'/assets/overview/free-3.webp',
-		],
-		premium: [
-			'/assets/overview/premium-1.webp',
-			'/assets/overview/premium-2.webp',
-			'/assets/overview/premium-3.webp',
-		],
-	};
-
 	const images = isPremium ? links.premium : links.free;
 
 	return (
@@ -48,12 +55,4 @@ export default function Page() {
 			</main>
 		</>
 	);
-}
-
-export async function getStaticProps({ locale }) {
-	return {
-		props: {
-			...(await serverSideTranslations(locale, ['common'])),
-		},
-	};
 }

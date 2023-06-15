@@ -1,14 +1,13 @@
+import cn from 'classnames';
 import s from './Modal.module.scss';
 
-const Modal = ({ active, setActive, children }) => {
+const Modal = ({ openModal, setOpenModal, children }) => {
 	return (
 		<div
-			className={active ? `${s.modal} ${s.active}` : `${s.modal}`}
-			onClick={() => setActive(false)}>
+			className={cn(s.modal, { [s.active]: openModal })}
+			onClick={() => setOpenModal(false)}>
 			<div
-				className={
-					active ? `${s.modalContainer} ${s.active}` : `${s.modalContainer}`
-				}
+				className={cn(s.modalContainer, { [s.active]: openModal })}
 				onClick={(e) => e.stopPropagation()}>
 				{children}
 			</div>

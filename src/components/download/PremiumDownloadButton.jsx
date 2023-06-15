@@ -1,12 +1,11 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 import s from './PremiumDownloadButton.module.scss';
 
 const PremiumDownloadButton = ({
 	platformName,
-	setActiveModal,
+	setOpenModal,
 	setIsButtonDisabled,
 	setStatusLog,
 	setButtonText,
@@ -14,12 +13,10 @@ const PremiumDownloadButton = ({
 }) => {
 	const router = useRouter();
 	const { t } = useTranslation('common');
-	const [key, setKey] = useState('');
 	const buttonDefaultText = t('download.buttons.get');
 
 	const handleClick = async () => {
-		setActiveModal(false);
-
+		setOpenModal(false);
 		setIsButtonDisabled(true);
 		setStatusLog('');
 		setButtonText('...');
@@ -38,7 +35,6 @@ const PremiumDownloadButton = ({
 					router.push(
 						`/api/premium-download?key=${key}&platform=${platformName}`
 					);
-					setKey(key);
 					break;
 				case 'supporter':
 					setStatusLog(t('download-status.supporter'));
@@ -60,7 +56,7 @@ const PremiumDownloadButton = ({
 	};
 
 	return (
-		<button onClick={() => handleClick()} className={s.version}>
+		<button onClick={handleClick} className={s.version}>
 			<Image
 				className={s.image}
 				src={`/assets/download/${platformName}.png`}

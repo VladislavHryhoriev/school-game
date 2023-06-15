@@ -51,18 +51,6 @@
 	display: none;
 }
 
-.burgerButton {
-	margin: 1em;
-	background: none;
-}
-
-.burgerIcon {
-	display: none;
-}
-.iconActive {
-	display: block;
-}
-
 @media screen and (max-width: 768px) {
 	.inner {
 		height: auto;
@@ -72,12 +60,12 @@
 		display: none;
 	}
 
-	.logoBox {
-		display: flex;
-	}
-
 	.showBurger {
 		display: block;
+	}
+
+	.logoBox {
+		display: flex;
 	}
 
 	.langSelect {

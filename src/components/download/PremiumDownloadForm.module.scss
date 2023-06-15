@@ -1,0 +1,38 @@
+@import '@/styles/base/variables';
+
+.emailForm {
+	margin-top: 1em;
+	display: flex;
+
+	.email {
+		flex: 3;
+		padding: 1em;
+		outline: none;
+		border-top-left-radius: $radius-sm;
+		border-bottom-left-radius: $radius-sm;
+		background: $background-input;
+		color: $font-primary;
+
+		&::placeholder {
+			color: #777;
+		}
+	}
+	.send {
+		flex: 1;
+		padding: 1em;
+		border-top-right-radius: $radius-sm;
+		border-bottom-right-radius: $radius-sm;
+		color: $font-white;
+		background: $font-secondary;
+		transition: $global-transition;
+
+		&:hover {
+			background: $font-secondary-hover;
+		}
+
+		&:disabled {
+			background: $background-button-disabled;
+			cursor: default;
+		}
+	}
+}

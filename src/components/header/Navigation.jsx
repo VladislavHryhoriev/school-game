@@ -1,22 +1,27 @@
-/// import style from Header
+import cn from 'classnames';
 import { useRouter } from 'next/router';
 import Menu from './Menu';
 import s from './Navigation.module.scss';
 import Social from './SocialLink';
 
-const Navigation = () => {
-	const { locale, push, asPath } = useRouter();
+const Navigation = ({ device, isOpen, handleChangeLanguage }) => {
+	const { locale } = useRouter();
 
-	const changeLanguage = (e) => {
-		const locale = e.target.value;
-		push(asPath, asPath, { locale });
-	};
+	const cnNavigation = cn({
+		[s.navigation]: device === 'desktop',
+		[s.burgerMenu]: device === 'mobile',
+		[s.showBurger]: device === 'mobile',
+		[s.activeMenu]: isOpen,
+	});
 
 	return (
-		<nav className={s.navigation}>
+		<nav className={cnNavigation}>
 			<Menu />
 			<Social />
-			<select defaultValue={locale} onChange={changeLanguage} className={s.langSelect}>
+			<select
+				defaultValue={locale}
+				onChange={handleChangeLanguage}
+				className={s.langSelect}>
 				<option className={s.selector} value='en'>
 					EN
 				</option>

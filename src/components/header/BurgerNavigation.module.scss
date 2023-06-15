@@ -1,0 +1,24 @@
+.logoBox {
+	display: none;
+	align-items: center;
+	margin-left: 1em;
+}
+
+.currentPage {
+	margin-left: 1em;
+	font-size: 1.5em;
+}
+
+.showBurger {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+	.logoBox {
+		display: flex;
+	}
+
+	.showBurger {
+		display: block;
+	}
+}

@@ -1,0 +1,33 @@
+@import '@/styles/base/variables';
+
+.header {
+	text-align: center;
+	color: $font-white;
+}
+
+.text {
+	margin-top: 1em;
+	background: #111b;
+	padding: 1em;
+	border-radius: $radius-lg;
+}
+
+.new {
+	padding: $global-padding;
+	padding-bottom: 0;
+}
+
+.bugfix {
+	padding: $global-padding;
+}
+
+@media screen and (max-width: 768px) {
+	.new {
+		text-align: center;
+		padding: 1em;
+	}
+	.bugfix {
+		text-align: center;
+		padding: 1em;
+	}
+}

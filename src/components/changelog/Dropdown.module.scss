@@ -23,12 +23,8 @@
 	}
 }
 
-.button:hover + .active {
-	border-color: $font-secondary-hover;
-}
-
 .content {
-	max-height: 0;
+	display: none;
 	overflow: hidden;
 	border-bottom-left-radius: $radius-lg;
 	border-bottom-right-radius: $radius-lg;
@@ -37,28 +33,11 @@
 
 .active {
 	border-top: 0;
-	max-height: 100%;
-}
-
-.new {
-	padding: $global-padding;
-	padding-bottom: 0;
+	display: block;
 }
 
 .bugfix {
 	padding: $global-padding;
-}
-
-.header {
-	text-align: center;
-	color: $font-white;
-}
-
-.text {
-	margin-top: 1em;
-	background: #111b;
-	padding: 1em;
-	border-radius: $radius-lg;
 }
 
 @media screen and (max-width: 768px) {

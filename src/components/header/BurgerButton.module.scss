@@ -1,0 +1,21 @@
+.burgerButton {
+	margin: 1em;
+	background: none;
+}
+
+.showBurger {
+	display: none;
+}
+
+.burgerIcon {
+	display: none;
+}
+.iconActive {
+	display: block;
+}
+
+@media screen and (max-width: 768px) {
+	.showBurger {
+		display: block;
+	}
+}
