@@ -1,5 +1,5 @@
 import Dropdown from '@/components/changelog/Dropdown';
-import { changelogVersionsLocale } from '@/data/changelogVersionsLocalesMain';
+import { changelogVersionsLocale } from '@/data/changelogVersionsLocales';
 import s from '@/styles/pages/changelog.module.scss';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
