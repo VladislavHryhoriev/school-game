@@ -10,6 +10,7 @@ const Logo = () => {
 				width={100}
 				height={50}
 				alt='discord-logo'
+				priority
 			/>
 		</div>
 	);
