@@ -1,32 +1,37 @@
 @import '@/styles/base/variables';
+@import '@/styles/base/mixins';
 
 .modal {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100vw;
-	height: 100vh;
-	background: #0008;
+	inset: 0;
+	padding: 1.25rem;
+	overflow: auto;
+	background: rgba(5, 3, 10, 0.72);
 	opacity: 0;
+	visibility: hidden;
 	pointer-events: none;
 	transition: $global-transition;
-	z-index: 50;
+	z-index: 80;
 
 	&.active {
 		opacity: 1;
+		visibility: visible;
 		pointer-events: all;
-		backdrop-filter: blur(10px);
+		backdrop-filter: blur(16px);
 	}
 }
 
 .modalContainer {
-	padding: $global-padding;
-	border-radius: $radius-lg;
-	transform: scale(0);
-	background: $background-main;
+	width: min(100%, 28rem);
+	padding: 1.75rem 1.6rem 1.5rem;
+	border-radius: 1.5rem;
+	overflow: hidden;
+	transform: scale(0.92);
+	@include glass;
+	background: rgba(22, 14, 30, 0.94);
 	transition: $global-transition;
 
 	&.active {
@@ -36,6 +41,7 @@
 
 @media screen and (max-width: 768px) {
 	.modalContainer {
-		border-radius: $radius-sm;
+		padding: 1.35rem 1.15rem 1.2rem;
+		border-radius: 1.25rem;
 	}
 }

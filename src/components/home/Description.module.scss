@@ -1,17 +1,16 @@
 @import '@/styles/base/variables';
+@import '@/styles/base/mixins';
 
 .description {
-	flex: 4;
+	flex: 1.7;
 	position: relative;
-	padding: $global-padding;
-	border-top-left-radius: $radius-lg;
-	border-bottom-left-radius: $radius-lg;
-	background: $background-primary;
+	padding: 2.25rem;
+	border-radius: $radius-lg;
+	@include glass;
+}
 
-	.title {
-		text-align: center;
-		font-size: 2em;
-	}
+.title {
+	font-size: clamp(2rem, 4vw, 3.1rem);
 }
 
 .imageBox {
@@ -20,32 +19,30 @@
 	top: 0;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	display: flex;
 	justify-content: center;
 }
 
 .image {
 	display: none;
-	width: 150px;
-}
-
-@media screen and (max-width: 1140px) {
-	.description {
-		border-radius: $radius-sm;
-	}
+	width: 120px;
+	height: auto;
 }
 
 @media screen and (max-width: 768px) {
 	.description {
-		padding: 1em;
-		padding-top: 3em;
-		.title {
-			display: none;
-		}
+		padding: 1.35rem 1.15rem 1.15rem;
 	}
+
 	.imageBox {
+		display: flex;
+
 		& .image {
 			display: block;
 		}
+	}
+
+	.title {
+		margin-top: 2.4rem;
+		text-align: center;
 	}
 }

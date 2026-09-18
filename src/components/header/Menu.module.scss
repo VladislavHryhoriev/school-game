@@ -3,29 +3,15 @@
 .menu {
 	display: flex;
 	align-items: center;
-
-	.link {
-		margin: 0 1em;
-
-		&:hover {
-			color: $font-white;
-		}
-	}
-}
-
-@media screen and (max-width: 1024px) {
-	.menu {
-		padding-right: 1em;
-		border-right: 3px solid #333;
-	}
+	gap: 0.15rem;
 }
 
 @media screen and (max-width: 768px) {
 	.menu {
 		display: block;
-		margin-top: 3em;
+		margin-top: 1.5rem;
 		padding: 0;
 		border: none;
-		font-size: 1.5em;
+		font-size: 1.35rem;
 	}
 }

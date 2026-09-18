@@ -2,16 +2,11 @@
 
 .swiper {
 	max-height: 700px;
-}
-
-.swiper-wrapper {
-}
-
-.swiper-slide {
+	border-radius: 1.15rem;
 }
 
 .slide {
-	border-radius: $radius-lg;
+	border-radius: 1.15rem;
 	height: auto;
 	object-fit: contain;
 }
@@ -19,20 +14,34 @@
 .swiper-button-prev,
 .swiper-button-next {
 	margin-top: 0;
-	width: 100px;
+	width: 88px;
 	top: 0;
 	height: 100%;
-	color: inherit;
+	color: $font-white;
 
 	&:hover {
-		background: #0001;
+		background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.28));
 	}
 }
 
 .swiper-button-prev {
 	left: 0;
+
+	&:hover {
+		background: linear-gradient(-90deg, transparent, rgba(0, 0, 0, 0.28));
+	}
 }
 
 .swiper-button-next {
 	right: 0;
+}
+
+.swiper-pagination-bullet {
+	background: $font-white;
+	opacity: 0.45;
+}
+
+.swiper-pagination-bullet-active {
+	background: $accent;
+	opacity: 1;
 }

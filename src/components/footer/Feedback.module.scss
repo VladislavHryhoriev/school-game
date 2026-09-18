@@ -1,13 +1,23 @@
 @import '@/styles/base/variables';
+@import '@/styles/base/mixins';
 
 .feedback {
 	display: flex;
 	flex-direction: column;
-	max-width: 100%;
+	padding: 1.6rem 1.5rem 1.4rem;
+	border-radius: $radius-lg;
+	@include glass;
 }
 
 .title {
-	text-align: center;
-	padding-bottom: 1em;
-	border-bottom: 3px solid $font-primary;
+	@include display;
+	font-size: 1.8rem;
+	padding-bottom: 0.85rem;
+	border-bottom: 1px solid $border;
+}
+
+@media screen and (max-width: 768px) {
+	.title {
+		text-align: center;
+	}
 }

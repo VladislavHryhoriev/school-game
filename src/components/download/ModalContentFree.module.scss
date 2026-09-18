@@ -1,6 +1,14 @@
+@import '@/styles/base/variables';
+@import '@/styles/base/mixins';
+
 .title {
-	font-weight: 500;
+	@include display;
+	margin-bottom: 1.15rem;
+	font-size: 1.7rem;
+	text-align: center;
 }
 
 .versions {
+	display: grid;
+	gap: 0.7rem;
 }

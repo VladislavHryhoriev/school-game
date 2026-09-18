@@ -1,26 +1,31 @@
 @import '@/styles/base/variables';
+@import '@/styles/base/mixins';
 
 .gallery {
-	margin-top: 3em;
+	margin-top: 1.5rem;
 }
 
 .inner {
-	background: $background-main;
-	padding: $global-padding;
+	padding: 2rem;
 	border-radius: $radius-lg;
+	@include glass;
+}
+
+.eyebrow {
+	@include eyebrow;
 }
 
 .title {
-	text-align: center;
+	margin: 0.8rem 0 1.25rem;
+	font-size: clamp(2.1rem, 4vw, 3.2rem);
 }
 
 @media screen and (max-width: 768px) {
-	.title {
-		display: none;
-	}
 	.inner {
-		padding: 1em;
-		padding-top: 0.5em;
-		border-radius: $radius-sm;
+		padding: 1.15rem;
+	}
+
+	.title {
+		font-size: 2rem;
 	}
 }

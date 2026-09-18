@@ -1,0 +1,151 @@
+@import '@/styles/base/variables';
+@import '@/styles/base/mixins';
+
+.hero {
+	padding-bottom: 1.5rem;
+}
+
+.panel {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1.05fr 0.95fr;
+	align-items: center;
+	gap: 1.5rem;
+	overflow: hidden;
+	min-height: 28rem;
+	padding: 3.4rem 3.2rem;
+	border-radius: 2rem;
+	@include glass;
+	background: linear-gradient(
+			180deg,
+			rgba(255, 122, 168, 0.08),
+			rgba(18, 12, 26, 0.28)
+		),
+		$background-primary;
+}
+
+.copy {
+	position: relative;
+	z-index: 2;
+	min-width: 0;
+}
+
+.eyebrow {
+	@include eyebrow;
+}
+
+.title {
+	max-width: 10ch;
+	margin-top: 1rem;
+	font-size: clamp(3.2rem, 7vw, 6.2rem);
+	font-weight: 800;
+	line-height: 0.94;
+}
+
+.tagline {
+	max-width: min(28rem, 100%);
+	margin-top: 1.15rem;
+	color: $font-muted;
+	font-size: 1.12rem;
+	white-space: pre-line;
+}
+
+.actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.85rem;
+	margin-top: 1.85rem;
+}
+
+.primary {
+	@include primary-button;
+	min-width: 10.5rem;
+}
+
+.secondary {
+	@include ghost-button;
+	min-width: 10.5rem;
+}
+
+.art {
+	position: relative;
+	z-index: 1;
+	height: 100%;
+	min-height: 18rem;
+}
+
+.shotMain,
+.shotAlt {
+	position: absolute;
+	border-radius: 1rem;
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
+	object-fit: cover;
+}
+
+.shotMain {
+	width: 108%;
+	height: auto;
+	right: -8%;
+	top: 8%;
+	transform: rotate(3deg);
+}
+
+.shotAlt {
+	width: 62%;
+	height: auto;
+	left: -6%;
+	bottom: 4%;
+	transform: rotate(-8deg);
+}
+
+@media screen and (max-width: 980px) {
+	.panel {
+		grid-template-columns: 1fr;
+		padding: 2.2rem 1.35rem 1.5rem;
+		min-height: 0;
+	}
+
+	.art {
+		min-height: 14rem;
+		margin-top: 0.5rem;
+	}
+
+	.shotMain {
+		width: 78%;
+		right: 2%;
+		top: 0;
+	}
+
+	.shotAlt {
+		width: 48%;
+		left: 4%;
+		bottom: 0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.panel {
+		padding: 2.2rem 1.2rem 1.4rem;
+		border-radius: 1.25rem;
+	}
+
+	.tagline {
+		font-size: 1rem;
+		padding-right: 0.15rem;
+	}
+
+	.actions {
+		flex-direction: column;
+	}
+
+	.primary,
+	.secondary {
+		width: 100%;
+	}
+
+	.art {
+		min-height: 13.5rem;
+		margin-top: 0.75rem;
+	}
+}

@@ -1,10 +1,12 @@
 import { useContext } from 'react';
+import { useTranslation } from 'next-i18next';
 import Logo from './Logo';
 import s from './Widget.module.scss';
 import { WidgetContext } from '@/context/widgetContext';
 import cn from 'classnames';
 
 const Widget = () => {
+	const { t } = useTranslation('common');
 	const { instant_invite, presence_count, name, members } =
 		useContext(WidgetContext);
 
@@ -13,13 +15,14 @@ const Widget = () => {
 			className={s.widget}
 			href={instant_invite}
 			target='_blank'
-			rel='nofollow'>
+			rel='nofollow noreferrer'>
 			<Logo />
 			<div className={s.members}>
-				<p>Online: {presence_count}</p>
+				<p className={s.label}>{t('home.community-label')}</p>
+				<p className={s.onlineCount}>Online: {presence_count}</p>
 				<h2 className={s.title}>{name}</h2>
 				<ul className={s.list}>
-					{members.map((member) => (
+					{members?.map((member) => (
 						<li className={cn(s.member, member.status)} key={member.id}>
 							<p>{member.username}</p>
 							{member.game && (

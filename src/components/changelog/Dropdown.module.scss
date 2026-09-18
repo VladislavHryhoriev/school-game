@@ -1,57 +1,54 @@
 @import '@/styles/base/variables';
+@import '@/styles/base/mixins';
 
 .dropdown {
-	margin-bottom: 1em;
+	overflow: hidden;
+	border-radius: $radius-md;
+	@include glass;
 }
 
 .button {
-	display: block;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	width: 100%;
-	padding: 1em;
-	border-radius: $radius-sm;
-	background: $font-secondary;
+	padding: 1.05rem 1.25rem;
 	color: $font-white;
-	transition: $global-transition;
+	font-weight: 600;
+	text-align: left;
+	transition: background $global-transition;
 
 	&:hover {
-		background: $font-secondary-hover;
+		background: rgba(255, 255, 255, 0.04);
 	}
 
-	&.btnActive {
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
+	&::after {
+		content: '';
+		width: 0.55rem;
+		height: 0.55rem;
+		border-right: 2px solid $accent;
+		border-bottom: 2px solid $accent;
+		transform: rotate(45deg);
+		transition: transform $global-transition;
+	}
+
+	&.btnActive::after {
+		transform: rotate(225deg);
 	}
 }
 
 .content {
 	display: none;
 	overflow: hidden;
-	border-bottom-left-radius: $radius-lg;
-	border-bottom-right-radius: $radius-lg;
-	background: $background-primary;
+	border-top: 1px solid $border;
 }
 
 .active {
-	border-top: 0;
 	display: block;
-}
-
-.bugfix {
-	padding: $global-padding;
 }
 
 @media screen and (max-width: 768px) {
 	.button {
-		border-radius: $radius-sm;
-		padding: 1.25em;
-	}
-
-	.new {
-		text-align: center;
-		padding: 1em;
-	}
-	.bugfix {
-		text-align: center;
-		padding: 1em;
+		padding: 1rem 1.05rem;
 	}
 }

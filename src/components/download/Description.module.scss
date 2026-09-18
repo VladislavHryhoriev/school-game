@@ -2,24 +2,24 @@
 
 .description {
 	display: flex;
+	flex: 1;
 	flex-direction: column;
 	justify-content: space-between;
+	min-width: 0;
 }
 
 .imageBox {
-	margin: 2em 0;
+	margin: 1.5em 0;
 	display: none;
+
 	.image {
 		height: auto;
+		border-radius: $radius-md;
 	}
 }
 
 @media screen and (max-width: 768px) {
 	.imageBox {
 		display: block;
-
-		.image {
-			border-radius: $radius-sm;
-		}
 	}
 }

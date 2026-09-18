@@ -1,24 +1,32 @@
+@import '@/styles/base/variables';
+@import '@/styles/base/mixins';
+
 .developer {
+	padding: 1.6rem 1.5rem 1.4rem;
+	border-radius: $radius-lg;
+	@include glass;
 }
 
 .title {
-	text-align: center;
-	padding-bottom: 1em;
-	border-bottom: 3px solid;
+	@include display;
+	font-size: 1.8rem;
+	padding-bottom: 0.85rem;
+	border-bottom: 1px solid $border;
 }
 
 .links {
 	display: flex;
-	margin-top: 1em;
-	height: auto;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	margin-top: 1.1rem;
 }
 
 @media screen and (max-width: 768px) {
-	.developer {
-		margin-bottom: 3em;
-	}
 	.links {
-		display: flex;
 		justify-content: center;
+	}
+
+	.title {
+		text-align: center;
 	}
 }

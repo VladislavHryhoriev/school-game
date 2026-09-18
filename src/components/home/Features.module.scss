@@ -1,0 +1,61 @@
+@import '@/styles/base/variables';
+@import '@/styles/base/mixins';
+
+.features {
+	margin-top: 1.5rem;
+}
+
+.heading {
+	margin-bottom: 1.25rem;
+}
+
+.eyebrow {
+	@include eyebrow;
+}
+
+.title {
+	margin-top: 0.85rem;
+	font-size: clamp(2.1rem, 4vw, 3.4rem);
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+.card {
+	padding: 1.6rem 1.45rem 1.5rem;
+	border-radius: $radius-lg;
+	@include glass;
+	transition: transform $global-transition, border-color $global-transition;
+}
+
+.card:hover {
+	transform: translateY(-4px);
+	border-color: $border-strong;
+}
+
+.index {
+	display: block;
+	margin-bottom: 1.1rem;
+	color: $accent;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.16em;
+}
+
+.cardTitle {
+	font-size: 1.7rem;
+}
+
+.cardText {
+	margin-top: 0.7rem;
+	color: $font-muted;
+}
+
+@media screen and (max-width: 900px) {
+	.grid {
+		grid-template-columns: 1fr;
+	}
+}

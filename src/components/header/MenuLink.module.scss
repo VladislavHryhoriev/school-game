@@ -1,20 +1,35 @@
 @import '@/styles/base/variables';
 
 .link {
-	margin: 0 1em;
+	display: inline-flex;
+	align-items: center;
+	padding: 0.5rem 0.95rem;
+	border-radius: $radius-pill;
+	color: $font-muted;
+	transition: color $global-transition, background $global-transition;
 
 	&:hover {
 		color: $font-white;
+		background: rgba(255, 255, 255, 0.06);
 	}
+}
+
+.active {
+	color: $font-white;
+	background: rgba(255, 122, 168, 0.14);
 }
 
 @media screen and (max-width: 768px) {
 	.link {
-		display: inline-block;
-		margin-bottom: 1em;
-		padding: 0.5em 2em;
-		border-radius: 0.25em;
+		display: inline-flex;
+		margin-bottom: 0.75rem;
+		padding: 0.7rem 1.6rem;
+		border-radius: $radius-pill;
 		color: $font-white;
-		background: $font-secondary;
+		background: rgba(255, 122, 168, 0.16);
+	}
+
+	.active {
+		background: linear-gradient(135deg, #ff8fb3, #c45bff);
 	}
 }

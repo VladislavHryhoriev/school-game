@@ -2,17 +2,23 @@
 
 .version {
 	display: flex;
-	margin: 0.5em 0;
-	padding: 0.5em 0.5em;
+	margin: 0;
+	padding: 0.45em 0.55em;
 	color: $font-white;
-	background: #444b;
-	border-radius: $radius-lg;
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid $border;
+	border-radius: 0.7rem;
 	transition: $global-transition;
 
 	&:hover {
-		background: #555d;
+		background: rgba(255, 122, 168, 0.16);
+		border-color: $border-strong;
 	}
+
 	.image {
+		width: 28px;
+		height: 28px;
+		object-fit: contain;
 	}
 }
 

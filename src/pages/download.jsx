@@ -4,6 +4,7 @@ import { DownloadVersionLinksContext } from '@/context/downloadVersionLinksConte
 import { downloadVersionLinks } from '@/data/downloadVersionLinks';
 import s from '@/styles/pages/download.module.scss';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import { useState } from 'react';
 
@@ -30,6 +31,7 @@ export async function getStaticProps({ locale }) {
 
 export default function Page() {
 	const [isPremium, setIsPremium] = useState(false);
+	const { t } = useTranslation('common');
 	const images = isPremium ? links.premium : links.free;
 
 	return (
@@ -39,17 +41,19 @@ export default function Page() {
 			</Head>
 			<main className={s.versions}>
 				<div className='container'>
-					<div className={s.inner}>
-						<div className={s.info}>
-							<DownloadVersionLinksContext.Provider
-								value={downloadVersionLinks}>
-								<Description
-									isPremium={isPremium}
-									setIsPremium={setIsPremium}
-								/>
-							</DownloadVersionLinksContext.Provider>
-							<Images images={images} />
-						</div>
+					<div className={s.intro}>
+						<p className={s.eyebrow}>{t('download.eyebrow')}</p>
+						<h1 className={s.pageTitle}>{t('download.page-title')}</h1>
+					</div>
+					<div className={s.info}>
+						<DownloadVersionLinksContext.Provider
+							value={downloadVersionLinks}>
+							<Description
+								isPremium={isPremium}
+								setIsPremium={setIsPremium}
+							/>
+						</DownloadVersionLinksContext.Provider>
+						<Images images={images} />
 					</div>
 				</div>
 			</main>

@@ -1,7 +1,12 @@
+@import '@/styles/base/variables';
+
 .social {
 	display: flex;
-	padding-right: 1em;
-	border-right: 3px solid #333;
+	align-items: center;
+	gap: 0.35rem;
+	margin-left: 0.5rem;
+	padding-left: 0.75rem;
+	border-left: 1px solid $border;
 }
 
 @media screen and (max-width: 1024px) {
@@ -14,7 +19,9 @@
 	.social {
 		display: flex;
 		justify-content: center;
+		margin: 1.5rem 0 0;
 		padding: 0;
-		gap: 0.5em;
+		border: none;
+		gap: 0.65rem;
 	}
 }

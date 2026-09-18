@@ -1,56 +1,81 @@
 @import '@/styles/base/variables';
+@import '@/styles/base/mixins';
 
 .widget {
-	flex: 2;
-	max-width: 400px;
-	background: $background-primary;
-	border-top-right-radius: $radius-lg;
-	border-bottom-right-radius: $radius-lg;
-	transition: $global-transition;
+	flex: 0 0 320px;
+	max-width: 340px;
+	overflow: hidden;
+	border-radius: $radius-lg;
+	@include glass;
+	transition: transform $global-transition, border-color $global-transition;
 
 	&:hover {
-		filter: brightness(0.9);
+		transform: translateY(-3px);
+		border-color: $border-strong;
 	}
 
 	.members {
-		padding: calc($global-padding - 0.5em);
+		padding: 1.15rem 1.15rem 1.25rem;
+	}
+
+	.label {
+		@include eyebrow;
+		margin-bottom: 0.85rem;
+	}
+
+	.onlineCount {
+		color: $font-muted;
+		font-size: 0.85rem;
 	}
 
 	.title {
-		text-align: center;
-		border-top-left-radius: $radius-sm;
-		border-top-right-radius: $radius-sm;
-		background: $font-secondary;
+		margin: 0.35rem 0 0.85rem;
+		padding: 0.55rem 0.75rem;
+		border-radius: $radius-sm;
+		background: linear-gradient(135deg, #5865f2, #8b7cff);
 		color: $font-white;
-		font-size: 1em;
-		font-weight: 500;
+		font-size: 0.95rem;
+		font-family: inherit;
+		font-weight: 600;
+		letter-spacing: 0;
+		text-align: center;
 	}
 
 	.list {
-		max-height: 500px;
-		overflow-y: scroll;
-		background: #3336;
-		padding: 0 0.5em;
+		position: relative;
+		max-height: 430px;
+		overflow-y: auto;
+		padding: 0.35rem 0.55rem;
+		border-radius: $radius-sm;
+		background: rgba(0, 0, 0, 0.22);
+		mask-image: linear-gradient(to bottom, #000 88%, transparent);
+
 		&::-webkit-scrollbar {
 			width: 5px;
 		}
 
 		&::-webkit-scrollbar-thumb {
-			background: $font-secondary;
+			border-radius: 10px;
+			background: $accent;
 		}
 	}
 
 	.member {
 		display: flex;
 		align-items: center;
-		color: $font-secondary;
-		// justify-content: space-between;
+		gap: 0.5rem;
+		padding: 0.4rem 0;
+		color: #9aa6ff;
+		font-size: 0.92rem;
 
 		.activity {
-			font-size: 0.8em;
-			color: #555a;
+			font-size: 0.75rem;
+			color: rgba(255, 255, 255, 0.38);
 			margin-left: auto;
-			overflow-x: hidden;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			max-width: 42%;
 		}
 	}
 }

@@ -1,24 +1,34 @@
 @import '@/styles/base/variables';
+@import '@/styles/base/mixins';
 
 .versions {
-	min-height: 100vh;
+	min-height: 70vh;
+	padding-bottom: 2rem;
 }
 
-.inner {
+.intro {
+	margin-bottom: 1.25rem;
+}
+
+.eyebrow {
+	@include eyebrow;
+}
+
+.pageTitle {
+	margin-top: 0.85rem;
+	font-size: clamp(2.4rem, 5vw, 4.2rem);
 }
 
 .info {
 	display: flex;
-	padding: $global-padding;
+	gap: 1.5rem;
+	padding: 2rem;
 	border-radius: $radius-lg;
-	background: $background-primary;
-	text-align: center;
+	@include glass;
 }
 
 @media screen and (max-width: 768px) {
 	.info {
-		margin-top: -2em;
-		padding: 1em;
-		border-radius: $radius-sm;
+		padding: 1.15rem;
 	}
 }

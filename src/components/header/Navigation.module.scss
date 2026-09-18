@@ -1,46 +1,50 @@
 @import '@/styles/base/variables';
+@import '@/styles/base/mixins';
 
 .navigation {
 	display: flex;
-	font-size: 1.25em;
+	align-items: center;
+	gap: 0.35rem;
+	font-size: 0.95rem;
 }
 
 .langSelect {
-	margin: 0 1em;
-	border: none;
+	margin-left: 0.35rem;
+	min-width: 3.6rem;
+	padding: 0.45rem 0.7rem;
+	border: 1px solid $border;
+	border-radius: $radius-pill;
 	color: $font-primary;
-	background: transparent;
+	background: rgba(255, 255, 255, 0.04);
 	text-align: center;
 	cursor: pointer;
 
 	&:focus {
-		outline: none;
+		outline: 2px solid $accent;
+		outline-offset: 2px;
 	}
 
 	.selector {
-		background: $background-primary;
-
-		&:hover {
-			background: none;
-		}
-
-		&:focus {
-			outline: none;
-		}
+		background: #16101c;
+		color: $font-primary;
 	}
 }
 
 .burgerMenu {
 	position: absolute;
-	top: 100%;
+	top: calc(100% + 0.6rem);
 	right: 0;
+	left: 0;
 	width: 100%;
-	height: 100vh;
-	background: $background-primary;
-	transform: translateX(100%);
+	min-height: calc(100vh - 5rem);
+	padding: 1.5rem 1rem 3rem;
+	border-radius: 1.25rem;
+	background: rgba(12, 8, 18, 0.94);
+	transform: translateX(110%);
 	text-align: center;
 	transition: $global-transition;
-	backdrop-filter: blur(5px);
+	backdrop-filter: blur(18px);
+	border: 1px solid $border;
 
 	&.activeMenu {
 		transform: translateX(0);
@@ -52,10 +56,6 @@
 }
 
 @media screen and (max-width: 768px) {
-	.inner {
-		height: auto;
-	}
-
 	.navigation {
 		display: none;
 	}
@@ -64,12 +64,8 @@
 		display: block;
 	}
 
-	.logoBox {
-		display: flex;
-	}
-
 	.langSelect {
-		margin-top: 1em;
-		font-size: 2em;
+		margin: 1.5rem auto 0;
+		font-size: 1.1rem;
 	}
 }

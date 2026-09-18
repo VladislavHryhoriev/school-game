@@ -9,6 +9,7 @@ const Gallery = () => {
 		<section className={s.gallery}>
 			<div className='container'>
 				<div className={s.inner}>
+					<p className={s.eyebrow}>{t('gallery-eyebrow')}</p>
 					<h2 className={s.title}>{t('gallery-overview')}</h2>
 					<Carousel />
 				</div>

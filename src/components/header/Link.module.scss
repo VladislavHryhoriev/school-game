@@ -8,22 +8,36 @@
 .link {
 	display: flex;
 	justify-content: center;
-	margin: 0 0.2em;
-	padding: 0.5em;
-	background: #333b;
-	border-radius: 0.5em;
+	align-items: center;
+	width: 2.35rem;
+	height: 2.35rem;
+	padding: 0.4rem;
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid $border;
+	border-radius: 50%;
 	transition: $global-transition;
 
 	&:hover {
-		background: #555b;
+		background: rgba(255, 122, 168, 0.18);
+		border-color: $border-strong;
+		transform: translateY(-1px);
+	}
+
+	.image {
+		width: 18px;
+		height: 18px;
+		object-fit: contain;
 	}
 }
 
 @media screen and (max-width: 768px) {
-	.image {
-		display: flex;
-		width: 1.5em;
-		height: 1.5em;
-		margin: 0.25em;
+	.link {
+		width: 3rem;
+		height: 3rem;
+
+		.image {
+			width: 1.35rem;
+			height: 1.35rem;
+		}
 	}
 }

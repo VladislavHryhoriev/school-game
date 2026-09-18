@@ -1,1 +1,63 @@
+@mixin glass {
+	background: $background-primary;
+	border: 1px solid $border;
+	backdrop-filter: blur(22px);
+	box-shadow: $shadow;
+}
 
+@mixin display {
+	font-family: var(--font-sans), 'Segoe UI', sans-serif;
+	letter-spacing: -0.045em;
+	font-weight: 800;
+}
+
+@mixin eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	padding: 0.35em 0.85em;
+	border: 1px solid $border-strong;
+	border-radius: $radius-pill;
+	background: $accent-soft;
+	color: $accent;
+	font-size: 0.72rem;
+	font-weight: 600;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+
+@mixin primary-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.95em 1.6em;
+	border-radius: $radius-pill;
+	background: linear-gradient(135deg, #ff8fb3 0%, #ff5e96 52%, #c45bff 100%);
+	color: $font-white;
+	font-weight: 600;
+	box-shadow: $glow;
+	transition: transform $global-transition, filter $global-transition;
+
+	&:hover {
+		filter: brightness(1.08);
+		transform: translateY(-1px);
+	}
+}
+
+@mixin ghost-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.95em 1.6em;
+	border: 1px solid $border;
+	border-radius: $radius-pill;
+	background: rgba(255, 255, 255, 0.04);
+	color: $font-primary;
+	font-weight: 600;
+	transition: background $global-transition, border-color $global-transition;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.08);
+		border-color: rgba(255, 255, 255, 0.2);
+	}
+}

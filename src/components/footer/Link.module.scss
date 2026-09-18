@@ -3,13 +3,18 @@
 .link {
 	display: flex;
 	align-items: center;
-	margin: 0 1em;
+	padding: 0.45rem;
+	border-radius: 50%;
 	transition: $global-transition;
 
 	&:hover {
-		filter: brightness(2);
+		background: rgba(255, 122, 168, 0.14);
+		transform: translateY(-2px);
 	}
 
 	.icon {
+		width: 42px;
+		height: 42px;
+		object-fit: contain;
 	}
 }

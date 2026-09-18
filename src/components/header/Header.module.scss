@@ -1,24 +1,37 @@
 @import '@/styles/base/variables';
+@import '@/styles/base/mixins';
 
 .header {
 	position: fixed;
-	width: 100%;
 	top: 0;
-	z-index: 10;
+	width: 100%;
+	padding: 1rem 1.25rem 0;
+	z-index: 40;
 }
 
 .inner {
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 5em;
-	background: $background-primary;
-	font-weight: 500;
+	width: 100%;
+	max-width: 1200px;
+	height: 4.6rem;
+	margin: 0 auto;
+	padding: 0 0.85rem 0 1.1rem;
+	border-radius: 1.35rem;
+	font-weight: 600;
+	@include glass;
 }
 
 @media screen and (max-width: 768px) {
+	.header {
+		padding: 0.75rem 0.85rem 0;
+	}
+
 	.inner {
-		height: auto;
+		height: 4.15rem;
+		border-radius: 1.1rem;
 	}
 
 	.navigation {

@@ -1,70 +1,56 @@
 @import '@/styles/base/variables';
-
-.buttons {
-}
+@import '@/styles/base/mixins';
 
 .statuslog {
-	color: lightcoral;
-	margin: 1em 0;
+	color: $accent;
+	min-height: 1.4em;
+	margin-bottom: 0.85rem;
+	font-weight: 600;
 }
 
 .wrapper {
 	display: flex;
 	justify-content: center;
-	gap: 1em;
+	gap: 0.65rem;
+	padding: 0.35rem;
+	border-radius: $radius-pill;
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid $border;
 
 	.btn {
-		padding: 0.5em 1em;
-		border-radius: $radius-sm;
-		background: $background-input;
-		color: $font-white;
+		flex: 1;
+		padding: 0.75em 1em;
+		border-radius: $radius-pill;
+		background: transparent;
+		color: $font-muted;
 		transition: $global-transition;
 
 		&:hover {
-			background: #444b;
+			color: $font-white;
 		}
 	}
 
-	.free {
-	}
-
-	.premium {
-	}
-
 	.active {
-		background: $font-secondary;
+		background: linear-gradient(135deg, #ff8fb3, #c45bff);
+		color: $font-white;
+		box-shadow: $glow;
 
 		&:hover {
-			background: $font-secondary;
+			color: $font-white;
 		}
 	}
 }
 
 .download {
-	margin-top: 1em;
+	margin-top: 1rem;
 	width: 100%;
-	padding: 1em 0;
-	border-radius: $radius-sm;
-	background: $font-secondary;
-	color: $font-white;
-	transition: $global-transition;
-
-	&:hover {
-		background: $font-secondary-hover;
-	}
+	@include primary-button;
+	padding: 1rem 0;
 }
 
 @media screen and (max-width: 576px) {
-	.emailForm {
+	.wrapper {
 		flex-direction: column;
-		gap: 1em;
-
-		.email {
-			border-radius: $radius-sm;
-		}
-
-		.send {
-			border-radius: $radius-sm;
-		}
+		border-radius: $radius-md;
 	}
 }

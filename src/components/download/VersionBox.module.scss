@@ -2,16 +2,31 @@
 
 .nameTop {
 	display: none;
+	margin-bottom: 0.4rem;
+	color: $font-muted;
+	font-weight: 600;
+}
+
+.name {
+	min-width: 3.6rem;
+	color: $font-muted;
+	font-weight: 600;
 }
 
 .versionBox {
 	display: flex;
 	align-items: center;
-	gap: 1em;
+	gap: 0.75rem;
+	padding: 0.7rem 0.8rem;
+	border: 1px solid $border;
+	border-radius: 1rem;
+	background: rgba(255, 255, 255, 0.04);
 }
 
 @media screen and (max-width: 576px) {
 	.versionBox {
+		flex-wrap: wrap;
+
 		.version {
 			flex-direction: column;
 		}
@@ -23,5 +38,6 @@
 
 	.nameTop {
 		display: block;
+		width: 100%;
 	}
 }

@@ -10,9 +10,15 @@ const Description = () => {
 	return (
 		<div className={s.description}>
 			<div className={s.imageBox}>
-				<Image className={s.image} src={'/assets/logo.png'} width={150} height={100} alt='logo' />
+				<Image
+					className={s.image}
+					src={'/assets/logo.png'}
+					width={150}
+					height={100}
+					alt='logo'
+				/>
 			</div>
-			<h1 className={s.title}>{t('home.title')}</h1>
+			<h2 className={s.title}>{t('home.story-title')}</h2>
 			<TextBox />
 			<LogoBox />
 		</div>

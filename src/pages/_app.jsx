@@ -6,16 +6,18 @@ import SEO from '@/components/SEO';
 import Layout from '@/components/layout/Layout';
 import '@/styles/main.scss';
 import { appWithTranslation } from 'next-i18next';
-import { Rubik } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 
-const rubik = Rubik({
-	weight: ['400', '500'],
-	subsets: ['latin'],
+const manrope = Manrope({
+	weight: ['400', '500', '600', '700', '800'],
+	subsets: ['latin', 'cyrillic'],
+	variable: '--font-sans',
+	display: 'swap',
 });
 
 const App = ({ Component, pageProps }) => {
 	return (
-		<div className={`${rubik.className} wrapper`}>
+		<div className={`${manrope.className} ${manrope.variable} wrapper`}>
 			<SEO />
 			<Layout>
 				<Component {...pageProps} />

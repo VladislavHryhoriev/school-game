@@ -1,10 +1,17 @@
+@import '@/styles/base/variables';
+@import '@/styles/base/mixins';
+
 .box {
+	text-align: left;
 }
 
 .title {
+	font-size: clamp(1.8rem, 3vw, 2.6rem);
 }
 
 .text {
-	margin-top: 1em;
-	min-height: 20em;
+	margin-top: 1rem;
+	min-height: 8.5rem;
+	color: $font-muted;
+	line-height: 1.7;
 }

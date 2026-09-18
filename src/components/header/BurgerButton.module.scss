@@ -1,6 +1,13 @@
+@import '@/styles/base/variables';
+
 .burgerButton {
-	margin: 1em;
-	background: none;
+	display: none;
+	margin-right: 0.35rem;
+	width: 2.7rem;
+	height: 2.7rem;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid $border;
 }
 
 .showBurger {
@@ -9,12 +16,21 @@
 
 .burgerIcon {
 	display: none;
+	width: 22px;
+	height: 22px;
+	margin: 0 auto;
 }
+
 .iconActive {
 	display: block;
 }
 
 @media screen and (max-width: 768px) {
+	.burgerButton.showBurger {
+		display: grid;
+		place-items: center;
+	}
+
 	.showBurger {
 		display: block;
 	}

@@ -1,10 +1,25 @@
+@import '@/styles/base/variables';
+@import '@/styles/base/mixins';
+
 .changelog {
-	margin-top: -3em;
-	min-height: 100vh;
+	min-height: 70vh;
+	padding-bottom: 2rem;
 }
 
-.inner {
+.intro {
+	margin-bottom: 1.25rem;
+}
+
+.eyebrow {
+	@include eyebrow;
+}
+
+.pageTitle {
+	margin-top: 0.85rem;
+	font-size: clamp(2.4rem, 5vw, 4.2rem);
 }
 
 .menu {
+	display: grid;
+	gap: 0.85rem;
 }

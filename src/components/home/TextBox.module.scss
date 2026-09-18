@@ -1,6 +1,18 @@
+@import '@/styles/base/variables';
+
 .textBox {
+	display: grid;
+	gap: 1rem;
+	margin-top: 1.25rem;
+}
+
+.text {
+	color: $font-muted;
+	font-size: 0.98rem;
+}
+
+@media screen and (max-width: 768px) {
 	.text {
-		margin-top: 1em;
-		text-align: center;
+		text-align: left;
 	}
 }
